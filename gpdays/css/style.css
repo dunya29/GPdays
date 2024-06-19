@@ -1487,6 +1487,7 @@ h6,
   right: 10px;
   width: 44%;
   z-index: 1;
+  pointer-events: none;
 }
 
 .intro__grad {
@@ -3341,10 +3342,6 @@ h6,
   max-width: 263px;
 }
 
-.footer.footer--main .footer__logo {
-  pointer-events: none;
-}
-
 .footer__inner {
   min-height: 560px;
   display: -webkit-box;
@@ -3420,6 +3417,7 @@ h6,
 }
 
 .footer__img {
+  pointer-events: none;
   position: absolute;
   top: 0;
   right: -6.5%;
