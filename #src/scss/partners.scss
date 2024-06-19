@@ -1,0 +1,29 @@
+.partners {
+    .container {
+        position: relative;
+    }
+    &__items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 -95px -75px;
+        a {
+            display: block;
+            opacity: 0.2;
+            transition: all .3s linear;
+            margin: 75px 95px;        
+            img {
+                max-width: 302px;
+               max-height: 127px;
+               object-fit: contain; 
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    &__grad {
+        left: -15%;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,75 @@
+<!--item-report-->
+<div class="item-report" data-start="@@start" data-end="@@end">
+    <div class="item-report__inner">
+        <div class="item-report__top">
+            <h6 class="grad-txt item-report__title">@@title</h6>
+            @@if (author == 1) {
+                <div class="item-report__authors">
+                    <div class="author">
+                        <div class="media-cover"><img src="img/author.jpg" alt=""></div>
+                        <div class="author__info">
+                            <p>Ольга Шишаева,<br>бизнес-коуч МТС</p>
+                        </div>
+                    </div>
+               </div>
+            }
+            @@if (author == 2) {
+               <div class="item-report__authors">
+                    <div class="author">
+                        <div class="media-cover"><img src="img/author.jpg" alt=""></div>
+                        <div class="author__info">
+                            <p>Ольга Шишаева,<br>бизнес-коуч МТС</p>
+                        </div>
+                    </div>
+                    <div class="author">
+                        <div class="media-cover"><img src="img/author.jpg" alt=""></div>
+                        <div class="author__info">
+                            <p>Ольга Шишаева,<br>бизнес-коуч МТС</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            @@if (txt == true) {
+                <p>Как использовать продуктовый подход в аутсорс-разработке и улучшить бизнес-процессы: новые юниты, задачи, отраслевые эксперты-партнеры, продуктовый аутсорсинг и генерация бэклога</p>
+            }
+            @@if (info == true) {
+                <div class="h6 page-loc"><svg><use xlink:href="img/icons/sprite.svg#location"></use></svg>ул. Алексеевская, 6/16, 1 этаж</div>
+                <div class="h6 page-time"><svg><use xlink:href="img/icons/sprite.svg#time"></use></svg>4 сентября в 09:30</div>
+            }
+        </div>
+        <div class="item-report__time">@@start - @@end</div>
+    </div>
+    <div class="item-report__mod">
+        <div class="modal__content">
+            <div class="custom-scroll">
+                <div class="modal__close">
+                    <button class="btn-close"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+                </div>
+                <div class="modal__top">
+                    <h2>@@title</h2>
+                </div>
+                <div class="reports-mod__content">
+                    <div class="mb-40 page-content">
+                        <p>Тема: как использовать продуктовый подход в аутсорс-разработке.</p>
+                        <p>Как использовать продуктовый подход в аутсорс-разработке и улучшить бизнес-процессы: новые юниты, задачи, отраслевые эксперты-партнеры, продуктовый аутсорсинг и генерация бэклога</p>
+                    </div>
+                    <div class="reports-mod__info">
+                        <div class="h6 page-loc"><svg><use xlink:href="img/icons/sprite.svg#location"></use></svg>ул. Алексеевская, 6/16, 1 этаж</div>
+                        <div class="h6 page-time"><svg><use xlink:href="img/icons/sprite.svg#time"></use></svg>4 сентября в 09:30</div>
+                    </div>
+                    <div class="mb-40 page-content">
+                        <h5>задания:</h5>
+                        <ul>
+                            <li>несколько блоков контента с глубоким погружением в каждую тему: бизнес, управление агентством, разработка, дизайн, HR</li>
+                            <li>60+ авторитетных спикеров в области ИТ, цифровых технологий и бизнес-стратегий</li>
+                            <li>нетворкинг, обмен опытом и новые знакомств с представителями крупных корпораций, стартапов и ИТ-специалистами</li>
+                            <li>мастер-классы и воркшопы, где вы получите новые навыки и инсайты, которые можно сразу применить в работе</li>
+                            <li>уникальные и запоминающиеся неформальные активности: футбольный ИТ-турнир, три зажигательные вечеринки и культурная программа</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>             
+            <img class="modal__bg" src="img/modal-hackaton.svg" alt="">
+        </div>
+    </div>
+</div>

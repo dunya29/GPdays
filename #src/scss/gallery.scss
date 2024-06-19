@@ -1,0 +1,95 @@
+.gallery {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 20px;
+        .media-cover {
+            height: 268px;
+            border-radius: 60px;
+            cursor: pointer;
+            &:hover img {
+                transform: scale(1.02);
+            }
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(#000, 5%);
+                z-index: 1;
+            }
+            &:nth-child(-n+2) {
+                height: 556px;
+            }
+            &:nth-child(2n+1) {
+                grid-column-end: span 2;
+            }
+            &:nth-child(1) {
+                grid-column-end: span 4;
+            }
+            &:nth-child(2) {
+                grid-column-end: span 2;
+            }
+            img {
+                transition: all .8s cubic-bezier(.25,.46,.45,.94);
+            }
+        }
+        .item-video:before {
+            background: rgba(#000, 15%);
+        }
+    }
+    &__block {
+        transition: all .5s linear;
+    }
+}
+.gallery, .reports {
+    &__top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-bottom: 10px;
+        margin-top: -20px;
+        h2 {
+            margin: 0 15px 20px 0;
+        }
+    }
+    &__tabs {
+        flex: 1 1 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-bottom: 20px;
+        margin-right: 15px;
+        &-item {
+            input {
+                display: none;
+            }
+            span {
+                font-size: 44px;
+                color: $white20;
+                white-space: nowrap;
+                transition: all .3s linear;
+                cursor: pointer;
+            }
+            &:after {
+                content: "/";
+                font-size: 44px;
+                color: $white20;
+                margin: 0 5px;
+            }
+            &:last-child {
+                &:after {
+                    content: none;
+                }
+            }
+            &.active span, input:checked + span {
+                font-size: 68px;
+                color: $white;
+                transition: all 0s linear;
+            }
+        }
+    }
+}

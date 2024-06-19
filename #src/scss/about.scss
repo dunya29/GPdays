@@ -1,0 +1,59 @@
+.about {
+    .container {
+        position: relative;
+    }
+    .page-content {
+        max-width: 510px;
+        margin-left: auto;
+        margin-right: 19.7%;
+        ul {
+            max-width: 490px;
+        }
+    }
+    &__title {
+        line-height: 1.1;
+        margin-bottom: 20px;
+        span {
+            display: inline-block;
+        }
+    }
+    &__title--tablet, &__title--mob {
+        display: none;
+    }
+    &__dark {
+        padding: 0 10px;
+        background: $white10;
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+    &__light {
+        color: $black;
+        padding: 0 15px;
+        background: $white;
+        border-radius: 100px;
+        margin-bottom: 10px;
+    }
+    &__grad {
+        top: 100px;
+        left: -20%;
+    }
+    @media (max-width: $bp1) {
+        .page-content {
+            margin-right: 10.5%;
+        }
+        &__title--desk {
+            display: none;
+        }
+        &__title--tablet {
+            display: block;
+        }
+    }
+    @media (max-width: $bp3) {
+        &__title--tablet {
+            display: none;
+        }
+        &__title--mob {
+            display: block;
+        }
+    }
+}

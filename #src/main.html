@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@@include('_head.html', {   
+    "title": "Главная"
+})
+
+<body>
+    <svg style="position:absolute; visibility: hidden">
+        <defs>
+        <linearGradient id="green-gradient" x1="6.36914" y1="7.87822" x2="18.9349" y2="7.87822" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4CC326"/>
+        <stop offset="1" stop-color="#FFEA2A"/>
+        </linearGradient>
+        </defs>
+    </svg>
+    <div class="wrap">
+        <!--header-->
+        @@include('_header.html', {"main": true})
+        <!--main-->  
+        <main class="main">
+            <!--intro-->
+            <section class="section intro">
+                <div class="container">
+                    <div class="intro__inner">
+                        <div class="intro__content">
+                            <h5 class="grad-txt">4-6 сентября<br>Нижний Новгород</h5>
+                            <div class="intro__title">
+                                <img src="img/title.svg" alt="GP Days 2024">
+                                <p>крупнейшая ИТ-конференция о цифровом бизнесе, разработке, дизайне с открытой площадкой для диалога между заказчиками ИТ-услуг, руководителями digital-агентств   и продакшнов</p>          
+                                <img src="img/icons/anim-icon-1.svg" alt="" class="intro__ill-img intro__title--icon">
+                                </div>
+                            <div class="intro__bottom">
+                                <button class="btn main-btn mod-open-btn" data-modal="reg-mod">регистрация</button>
+                                <div class="social">
+                                    <a href="#"><img src="img/icons/vk.svg" alt="VK"></a>
+                                    <a href="#"><img src="img/icons/tg.svg" alt="Telegram"></a>
+                                    <a href="#"><img src="img/icons/youtube.svg" alt="Youtube"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro__img">
+                            <img src="img/main-deer.svg" alt="">
+                        </div>
+                    </div>
+                    <svg class="bg-grad intro__grad" xmlns="http://www.w3.org/2000/svg" width="863" height="813" viewBox="0 0 863 813" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M502.592 96.9742C545.908 119.16 583.878 146.504 621.346 177.571C653.289 204.056 674.63 238.809 706.171 265.772C756.514 308.807 874.483 318.291 862.095 383.373C848.281 455.939 723.077 431.019 665.834 477.672C635.47 502.419 634.987 547.551 617.583 582.653C579.618 659.229 581.678 774.602 502.592 806.933C436.125 834.105 357.697 764.605 316.6 705.696C277.382 649.48 339.749 554.185 291.98 505.036C217.927 428.846 37.603 483.961 3.32007 383.373C-25.0553 300.117 136.308 272.682 188.718 202.058C232.985 142.406 213.773 28.4615 284.192 4.88557C360.408 -20.6312 431.051 60.3321 502.592 96.9742Z" fill="#2D7017"/>
+                    </svg>
+                    <div class="intro__ill">
+                        <img class="intro__ill-img" src="img/icons/anim-icon-2.svg" alt="">
+                        <img class="intro__ill-img" src="img/icons/anim-icon-3.svg" alt="">
+                        <img class="intro__ill-img" src="img/icons/anim-icon-4.svg" alt="">
+                        <img class="intro__ill-img" src="img/icons/anim-icon-5.svg" alt="">
+                        <img class="intro__ill-img" src="img/icons/anim-icon-6.svg" alt="">
+                    </div>
+                </div>
+            </section>
+            <!--about-->
+            <section class="section about">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">о мероприятии</h5>
+                        <div class="sec-inner">
+                            <h2 class="about__title about__title--desk">
+                                <span class="about__dark">тема конференции:</span>
+                                <span class="about__light">Digital Future /</span>
+                                <span class="about__light">Цифровая трансформация</span>
+                                <span class="about__dark">бизнеса</span>
+                            </h2>
+                            <h2 class="h2 about__title about__title--tablet">
+                                <span class="about__dark">тема конференции:</span>
+                                <span class="about__light">Digital Future / Цифровая</span>
+                                <span class="about__light">трансформация</span>
+                                <span class="about__dark">бизнеса</span>
+                            </h2>
+                            <h2 class="h2 about__title about__title--mob">
+                                <span class="about__dark">тема</span>
+                                <span class="about__dark">конференции:</span>
+                                <span class="about__light">Digital Future /</span>
+                                <span class="about__light">Цифровая</span>
+                                <span class="about__dark">трансформация</span>
+                                <span class="about__light">бизнеса</span>
+                            </h2>
+                            <div class="page-content about__content">
+                                <p>руководители ИТ-подразделений крупнейших корпораций, владельцы digital-агентств, ведущие разработчики, веб-дизайнеры и специалисты в сфере ИТ-найма поделятся опытом, как адаптировать бизнес к цифровой среде, эффективно использовать передовые технологии и получать максимум пользы от трансформации бизнес-процессов</p>
+                                <h5><strong>вас ждет:</strong></h5>
+                                <ul>
+                                    <li>несколько блоков контента с глубоким погружением в каждую тему: бизнес, управление агентством, разработка,
+                                        дизайн, HR</li>
+                                    <li>60+ авторитетных спикеров в области ИТ, цифровых технологий и бизнес-стратегий</li>
+                                    <li>нетворкинг, обмен опытом и новые знакомств с представителями крупных корпораций, стартапов и ИТ-специалистами
+                                    </li>
+                                    <li>мастер-классы и воркшопы, где вы получите новые навыки и инсайты, которые можно сразу применить в работе</li>
+                                    <li>уникальные и запоминающиеся неформальные активности: футбольный ИТ-турнир, три зажигательные вечеринки и
+                                        культурная программа</li>
+                                    <li>питч-сессия стартап-проектов как перспективных, так и уже известных на российском рынке компаний</li>
+                                    <li>хакатон для начинающих разработчикорв и студентов ИТ-специальностей</li>
+                                    <li>рейтинг партнеров Globus Community</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="bg-grad about__grad" xmlns="http://www.w3.org/2000/svg" width="813" height="771" viewBox="0 0 813 771" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M185.067 193.855C224.956 165.974 266.899 145.231 311.896 126.676C350.257 110.857 390.958 108.278 429.553 93.038C491.154 68.7127 554.783 -31.0773 606.484 10.3491C664.13 56.5398 583.474 155.492 597.886 227.919C605.53 266.337 645.179 287.901 668.044 319.718C717.921 389.125 820.824 441.339 812.35 526.357C805.229 597.81 707.091 634.555 635.795 643.277C567.758 651.599 512.769 551.864 446.972 571.053C344.973 600.799 309.216 785.937 204.285 769.118C117.436 755.197 168.768 599.775 130.914 520.393C98.9407 453.343 -10.7323 416.953 1.41724 343.693C14.567 264.402 119.187 239.904 185.067 193.855Z" fill="#2D7017"/>
+                    </svg>
+                </div>
+            </section>
+            <!--main-sec-->
+            <section class="section main-sec">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">секции</h5>
+                        <div class="sec-inner">
+                            <div class="main-sec__row">
+                                @@include("_item-sec.html", {"author": true, "title": "секция «Управление» день 1", "txt": "руководители ИТ-подразделений крупнейших корпораций, представители компаний-заказчиков, эксперты в области ИТ, цифровых технологий и бизнес-стратеги поделятся опытом адаптации крупного бизнеса к цифровой среде, управления командой и трансформации бизнес-процессов в условиях глобальной цифровизации. Кроме того, спикеры поделятся историями успешного (и не очень) запуска продуктов в своих компаниях, а на круглом столе мы обсудим основные направления и темпы процесса импортозамещения"})
+                                @@include("_item-sec.html", {"author": true, "title": "секция «Управление» день 2", "txt": "владельцы digital-агентств и продакшнов расскажут о продуктовом подходе и собственных разработках, а также поделятся личными кейсами, как выстроить успешный бизнес в сфере ИТ. В рамках данной секции пройдет круглый стол на тему аутстаффинга: тренды, перспективы и проблемы этого направления"})
+                                @@include("_item-sec.html", {"author": true, "title": "секция «Разработка»", "txt": "вместе с СТО и ведущими разработчиками крупных компаний разбираем технические кейсы, искусственный интеллект, машинное обучение и нейросети. Строим честный диалог о хард и софт скиллах разработчиков, обсуждаем новейшие наработки и строим прогнозы относительно будущего отрасли"})
+                                @@include("_item-sec.html", {"author": true, "title": "секция «Дизайн»", "txt": "секция об актуальных технологиях в области дизайна и площадка для открытого диалога, которая позволит вам улучшить свои навыки и познакомиться с лучшими практиками в индустрии. Поговорим о новейших инструментах в UI/UX, графическом и веб-дизайне, поделимся кейсами и примерами успешных проектов"})
+                                @@include("_item-sec.html", {"author": true, "title": "секция «HR»", "txt": "обсуждаем современные подходы к управлению персоналом в технологических компаниях, стратегии найма, адаптации и удержания ИТ-специалистов, аналитические инструменты и автоматизацию HR-процессов. Отличная возможность обменяться опытом и узнать о новых инструментах для эффективного управления персоналом в условиях быстро меняющегося рынка технологий"})
+                                @@include("_item-sec.html", {"author": false, "title": "питч-сессия", "txt": "презентация и обсуждение стартап-проектов как перспективных, так и уже известных на российском рынке digital-агентств/продакшнов. Как это будет? Мы отбираем (с предварительной модерацией) всего 7-10 докладов, нацеленных на: IoT, ML, e-commerce, маркетплейсы, информационную безопасность, участники представляют 5-минутные презентации своих проектов, экспертное жюри задает вопросы и дает рекомендации участникам. Это отличная возможность обратить на себя внимание инвесторов с целью партнерств, менторства и поглощений"})
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--advant-->
+            <section class="section advant">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">преимущества</h5>
+                        <div class="sec-inner">
+                            <div class="advant__row">
+                                @@include("_item-advant.html", {"nmb": 1, "title": "диалог заказчик/агентство", "txt": "нащупываем потребности крупнейших бизнес-заказчиков, ищем точки соприкосновения с корпорациями, обсуждаем стратегию развития бизнеса в разрезе глобальной цифровизации, импортозамещения и внедрения новейших ИТ-технологий"})
+                                @@include("_item-advant.html", {"nmb": 2, "title": "тематические секции", "txt": "поделимся успешными бизнес-решениями и опытом управления агентствами, разберем технические кейсы и работу с AI, ML, Big Data, обсудим тренды разработки, веб-дизайна и карьеру технических специалистов"})
+                                @@include("_item-advant.html", {"nmb": 3, "title": "неформальная часть", "txt": "соревнуемся на футбольном турнире, зажигаем на легендарных вечеринках, учимся работать сообща на мастер-классах, и, конечно, много дискутируем, обсуждаем и делимся всем самым новым и интересным"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--price-->
+            <section class="section prices">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">цены</h5>
+                        <div class="sec-inner">
+                            <h2 class="sec-title">7 типов билетов</h2>
+                        </div>
+                    </div>
+                    <div class="swiper2">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                @@include("_item-prices.html")
+                                @@include("_item-prices.html")
+                                @@include("_item-prices.html")
+                                @@include("_item-prices.html")
+                                @@include("_item-prices.html")
+                            </div>
+                        </div>
+                        <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                        <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                    </div>
+                    <div class="prices__btns">
+                        <button class="btn main-btn mod-open-btn" data-modal="sponsor-mod">стать спонсором</button>
+                        <button class="btn class stroke-btn mod-open-btn" data-modal="reg-mod"><span class="link" data-txt="регистрация">регистрация</span></button>
+                    </div>
+                    <svg class="bg-grad prices__grad" xmlns="http://www.w3.org/2000/svg" width="815" height="774" viewBox="0 0 815 774" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M631.569 576.27C591.97 604.561 550.242 625.735 505.44 644.753C467.244 660.967 426.572 663.965 388.136 679.603C326.788 704.562 264.192 805.002 212.067 764.111C153.947 718.518 233.579 618.738 218.421 546.464C210.381 508.127 170.511 486.973 147.321 455.394C96.73 386.505 -6.70533 335.354 0.891158 250.253C7.2756 178.731 105.029 140.976 176.231 131.52C244.179 122.496 300.193 221.659 365.789 201.793C467.476 170.997 501.322 -14.5 606.421 1.23634C693.409 14.261 643.682 170.203 682.353 249.191C715.015 315.908 825.058 351.165 813.664 424.547C801.333 503.969 696.971 529.545 631.569 576.27Z" fill="#D2C01B" fill-opacity="0.7"/>
+                    </svg>
+                </div>
+            </section>
+            <!--reports-->
+            <section class="section reports" data-grid="8">
+                <div class="reports__grad"></div>
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">секции & доклады</h5>
+                        <div class="sec-inner">
+                            <div class="reports__top">
+                                <h2 class="sec-title">программа</h2>
+                                <div class="reports__tabs">
+                                    <label class="reports__tabs-item">
+                                        <input type="radio" name="report-tab-day" value="1" checked>
+                                        <span>4 сент</span>
+                                    </label>
+                                    <label class="reports__tabs-item">
+                                        <input type="radio" name="report-tab-day" value="2">
+                                        <span>5 сент</span>
+                                    </label>
+                                    <label class="reports__tabs-item">
+                                        <input type="radio" name="report-tab-day" value="3">
+                                        <span>6 сент</span>
+                                    </label>
+                                </div>
+                                <button class="btn stroke-btn mod-open-btn" data-modal="reports-mod"><span class="link" data-txt="все секции">все секции</span><svg><use xlink:href="img/icons/sprite.svg#edit"></use></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reports__scroll">
+                        <div class="reports__sections">
+                            <span>заказчики</span>
+                            <span>дизайн</span>
+                            <span>управление агентством</span>
+                            <span>HR</span>
+                            <span>техническая часть</span>
+                            <span>интервью</span>
+                            <span>спикеры</span>
+                            <span>хакатон</span>
+                        </div>
+                        <div class="reports__row">
+                            <div class="reports__time"></div>
+                            <div class="reports__block">
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "12:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "14:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:00", "end": "16:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:30", "end": "12:00", "title": "Как использовать продуктовый подход в аутсорс-разработке и улучшить бизнес-процессы: новые юниты, задачи, отраслевые эксперты-партнеры, продуктовый аутсорсинг и генерация бэклога"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:30", "end": "13:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "14:00", "end": "15:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:30", "end": "16:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:00", "end": "11:10", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "11:30", "end": "12:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:00", "end": "14:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "14:30", "end": "17:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "12:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "14:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:00", "end": "16:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 2, "start": "09:30", "end": "12:00", "title": "Как использовать продуктовый подход в аутсорс-разработке и улучшить бизнес-процессы: новые юниты, задачи, отраслевые эксперты-партнеры, продуктовый аутсорсинг и генерация бэклога"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:30", "end": "13:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "14:00", "end": "15:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:30", "end": "16:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:10", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "11:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:00", "end": "13:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "14:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "11:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:00", "end": "13:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "15:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                                <div class="reports__items">
+                                    @@include("_item-report-hackaton.html",{"info": true, "txt": true, "author": 0, "start": "09:00", "end": "13:00", "title": "Тема: как использовать продуктовый подход в аутсорс-разработке"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "15:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                    @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "16:00", "end": "17:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--parties-->
+            <section class="section parties">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">вечеринки</h5>
+                        <div class="sec-inner">
+                            <div class="parties__items">
+                                @@include("_item-parties.html",{"title":"Pre-party GP Days.<br>Стиль вечеринки — «Цыганский кринж».<br>Эту первую встречу вы точно запомните!"})
+                                @@include("_item-parties.html",{"title":"Middle-party GP Days.<br>Стиль вечеринки — «Буржуй party», дресс-код — красный цвет. С нас — сигары, казино и караоке; с вас — яркие образы и праздное настроение!"})
+                                @@include("_item-parties.html",{"title":"Middle-party GP Days.<br>Стиль вечеринки — «Буржуй party», дресс-код — красный цвет. С нас — сигары, казино и караоке; с вас — яркие образы и праздное настроение!"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--reviews-->
+            <section class="section reviews">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">о нас говорят</h5>
+                        <div class="sec-inner">
+                            <h2 class="sec-title">отзывы</h2>
+                        </div>
+                    </div>
+                    <div class="swiper1">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                @@include("_item-reviews.html")
+                                @@include("_item-reviews.html")
+                                @@include("_item-reviews.html")
+                                @@include("_item-reviews.html")
+                            </div>
+                        </div>
+                        <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                        <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                    </div>
+                </div>
+            </section>
+            <!--gallery-->
+            <section class="section switch-block gallery">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">фото & видео</h5>
+                        <div class="sec-inner">
+                            <div class="gallery__top">
+                                <h2 class="sec-title">как это было в</h2>
+                                <div class="gallery__tabs">
+                                    <span data-nav="" class="gallery__tabs-item active"><span>2023</span></span>
+                                    <span data-nav="" class="gallery__tabs-item"><span>2022</span></span>
+                                    <span data-nav="" class="gallery__tabs-item"><span>2021</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery__block active" data-block="">
+                        <div class="gallery__items">
+                            <div class="media-cover item-video" data-fancybox="gallery" data-src="https://youtu.be/p1ZZtqxtkJ4?si=UbpArZFQ9WcN2atF"><img src="img/gallery-1.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-2.jpg"><img src="img/gallery-2.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-3.jpg"><img src="img/gallery-3.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-4.jpg"><img src="img/gallery-4.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-5.jpg"><img src="img/gallery-5.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-6.jpg"><img src="img/gallery-5.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="gallery__block" data-block="">
+                        <div class="gallery__items">
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-1.jpg"><img src="img/gallery-1.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-2.jpg"><img src="img/gallery-2.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-3.jpg"><img src="img/gallery-3.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-4.jpg"><img src="img/gallery-4.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-5.jpg"><img src="img/gallery-5.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-6.jpg"><img src="img/gallery-5.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="gallery__block" data-block="">
+                        <div class="gallery__items">
+                            <div class="media-cover item-video" data-fancybox="gallery" data-src="https://youtu.be/p1ZZtqxtkJ4?si=UbpArZFQ9WcN2atF"><img src="img/gallery-1.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-2.jpg"><img src="img/gallery-2.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-3.jpg"><img src="img/gallery-3.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-4.jpg"><img src="img/gallery-4.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-5.jpg"><img src="img/gallery-5.jpg" alt=""></div>
+                            <div class="media-cover" data-fancybox="gallery" data-src="img/gallery-6.jpg"><img src="img/gallery-5.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--partners-->
+            <section class="section partners">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">лого</h5>
+                        <div class="sec-inner">
+                            <h2 class="sec-title">партнеры</h2>
+                            <div class="partners__items">
+                                <a href="#" target="_blank"><img src="img/partners/partner-1.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-2.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-3.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-4.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-5.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-6.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-7.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-8.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-9.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-10.svg" alt=""></a>
+                                <a href="#" target="_blank"><img src="img/partners/partner-11.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <svg class="bg-grad partners__grad" xmlns="http://www.w3.org/2000/svg" width="813" height="771" viewBox="0 0 813 771" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M185.066 193.855C224.954 165.974 266.897 145.231 311.894 126.676C350.255 110.857 390.956 108.278 429.551 93.038C491.152 68.7127 554.781 -31.0773 606.482 10.3491C664.128 56.5398 583.472 155.492 597.884 227.919C605.528 266.337 645.178 287.901 668.042 319.718C717.919 389.125 820.822 441.339 812.348 526.357C805.227 597.81 707.089 634.555 635.793 643.277C567.756 651.599 512.767 551.864 446.97 571.053C344.971 600.799 309.214 785.937 204.283 769.118C117.434 755.197 168.766 599.775 130.912 520.393C98.9388 453.343 -10.7343 416.953 1.41529 343.693C14.565 264.402 119.185 239.904 185.066 193.855Z" fill="#2D7017"/>
+                    </svg>
+                </div>
+            </section>
+            <!--guide-->
+            <section class="section switch-block guide">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">Нижний Новгород</h5>
+                        <div class="sec-inner">
+                            <h2 class="sec-title">гид по городу</h2>
+                            <div class="tabs">
+                                <span class="active" data-nav="">кафе и рестораны</span>
+                                <span data-nav="">точки сбора</span>
+                                <span data-nav="">достопримечательности</span>
+                                <span data-nav="">отели</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guide__block active" data-block="">
+                        <div class="swiper2">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                </div>
+                            </div>
+                            <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                            <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                        </div>
+                    </div>
+                    <div class="guide__block" data-block="">
+                        <div class="swiper2">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                </div>
+                            </div>
+                            <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                            <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                        </div>
+                    </div>
+                    <div class="guide__block" data-block="">
+                        <div class="swiper2">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                </div>
+                            </div>
+                            <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                            <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                        </div>
+                    </div>
+                    <div class="guide__block" data-block="">
+                        <div class="swiper2">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                    @@include("_item-guide.html", {"title":"МТС StartUp Hub"})
+                                    @@include("_item-guide.html", {"title":"Академия Маяк"})
+                                </div>
+                            </div>
+                            <button class="nav-btn nav-btn--prev"><svg><use xlink:href="img/icons/sprite.svg#btn-prev"></use></svg></button>
+                            <button class="nav-btn nav-btn--next"><svg><use xlink:href="img/icons/sprite.svg#btn-next"></use></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--faq-->
+            <section class="section faq">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">частые вопросы</h5>
+                        <div class="sec-inner">
+                            <h2 class="sec-title">FAQ</h2>
+                            <div class="faq__items show-all">
+                                <!--item-faq-->
+                                <div class="accordion item-faq show">
+                                    <div class="accordion__header">
+                                        <span>1</span>
+                                        <h3>КАК ДОБРАТЬСЯ ДО НИЖНЕГО НОВГОРОДА?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq show">
+                                    <div class="accordion__header">
+                                        <span>2</span>
+                                        <h3>КАК НАЙТИ ЖИЛЬЕ В НИЖНЕМ НОВГОРОДЕ?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq show">
+                                    <div class="accordion__header">
+                                        <span>3</span>
+                                        <h3>МОЖЕМ ЛИ МЫ ПРИЕХАТЬ ВСЕЙ КОМПАНИЕЙ?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq show">
+                                    <div class="accordion__header">
+                                        <span>4</span>
+                                        <h3>МОЖНО ЛИ СТАТЬ ПАРТНЕРОМ?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq show">
+                                    <div class="accordion__header">
+                                        <span>5</span>
+                                        <h3>Я ХОТЕЛ БЫ ВЫСТУПИТЬ СПИКЕРОМ НА КОНФЕРЕНЦИИ, КАК ПОДАТЬ ЗАЯВКУ?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq">
+                                    <div class="accordion__header">
+                                        <span>6</span>
+                                        <h3>Где позавтракать/пообедать/поужинать в Нижнем Новгороде?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq">
+                                    <div class="accordion__header">
+                                        <span>7</span>
+                                        <h3>Я представитель СМИ. Могу ли я аккредитоваться на мероприятие?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq">
+                                    <div class="accordion__header">
+                                        <span>8</span>
+                                        <h3>Могу ли я оплатить участие в конференции от юридического лица?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq">
+                                    <div class="accordion__header">
+                                        <span>9</span>
+                                        <h3>Расскажите подробнее о платных и бесплатных секциях?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq">
+                                    <div class="accordion__header">
+                                        <span>10</span>
+                                        <h3>Как будет проходить турнир по футболу? Мне нужна команда или я могу принять участие в индивидуальном порядке?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--item-faq-->
+                                <div class="accordion item-faq">
+                                    <div class="accordion__header">
+                                        <span>11</span>
+                                        <h3>Я ХОТЕЛ БЫ ВЫСТУПИТЬ СПИКЕРОМ НА КОНФЕРЕНЦИИ, КАК ПОДАТЬ ЗАЯВКУ?</h3>
+                                    </div>
+                                    <div class="accordion__body">
+                                        <div class="page-content">
+                                            <p>Да, вы можете поучаствовать в мероприятии в качестве партнера GP Days 2023. Благодаря этой опции вы получите возможность рассказать о своей компании всему ИТ-комьюнити:</p>
+                                            <ul>
+                                                <li>целевая аудитория секции «Управление бизнесом» — руководители и высший менеджмент студий и агентств, занимающиеся разработкой цифровых продуктов, руководители ИТ-подразделений и продуктовых команд крупных федеральных и региональных компаний, участники партнерской программы Globus Community</li>
+                                                <li>целевая аудитория секции «Управление разработкой» — технические специалисты, студенты ИТ-специальностей, технические директора компаний, занимающихся разработкой цифровых продуктов</li>
+                                            </ul>
+                                            <p>Партнеры конференции упоминаются во всех информационных материалах GP Days (на сайте, в официальных пресс-релизах, анонсах, постах в социальных сетях, email-рассылках и т.д.) Чем раньше вы примете решение об участии в качестве партнера, тем выше будет охват вашей целевой аудитории!</p>
+                                            <p>С актуальными промо-опциями и текущими ценами на них вы можете <a href="#">ознакомиться по ссылке</a>. Задать вопросы и оставить заявку на участие в качестве партнера можно, написав в Телеграм @uptempo (Илья Шемякин) или по электронной почте <a href="mailto:pr@globus-it.com">pr@globus-it.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn stroke-btn faq__btn"><span class="link" data-txt="открыть еще 6 вопросов">открыть еще 6 вопросов</span></button>
+                        </div>
+                    </div>
+                    <svg class="bg-grad faq__grad" xmlns="http://www.w3.org/2000/svg" width="815" height="774" viewBox="0 0 815 774" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M631.569 576.27C591.97 604.561 550.242 625.735 505.44 644.753C467.244 660.967 426.572 663.965 388.136 679.603C326.788 704.562 264.192 805.002 212.067 764.111C153.947 718.518 233.579 618.738 218.421 546.464C210.381 508.127 170.511 486.973 147.321 455.394C96.73 386.505 -6.70533 335.354 0.891158 250.253C7.2756 178.731 105.029 140.976 176.231 131.52C244.179 122.496 300.193 221.659 365.789 201.793C467.476 170.997 501.322 -14.5 606.421 1.23634C693.409 14.261 643.682 170.203 682.353 249.191C715.015 315.908 825.058 351.165 813.664 424.547C801.333 503.969 696.971 529.545 631.569 576.27Z" fill="#D2C01B" fill-opacity="0.7"/>
+                    </svg>
+                </div>
+            </section>
+            <!--contacts-->
+            <section class="section contacts">
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">с кем связаться</h5>
+                        <div class="sec-inner">
+                            <h2 class="sec-title">контакты</h2>
+                            <div class="contacts__row">
+                                <!--item-contact-->
+                                <div class="item-contact">
+                                    <div class="item-contact__top">
+                                        <h5 class="grad-txt">Инга Морозова</h5>
+                                        <p>по вопросам формирования программы конференции - руководитель партнерской программы «Globus Community»</p>
+                                        <div class="item-contact__img"><img src="img/contact-1.png" alt="Инга Морозова"></div>
+                                    </div>
+                                    <div class="item-contact__contact"><a href="tel:89307196571" class="h6 link" data-txt="+7 (930) 719-65-71">+7 (930) 719-65-71</a></div>
+                                    <div class="item-contact__contact"><a href="mailto:i.morozova@globus-ltd.com" class="h6 link" data-txt="i.morozova@globus-ltd.com">i.morozova@globus-ltd.com</a></div>
+                                </div>
+                                <!--item-contact-->
+                                <div class="item-contact">
+                                    <div class="item-contact__top">
+                                        <h5 class="grad-txt">Илья Шемякин</h5>
+                                        <p>по вопросам партнерства - руководитель PR-направления</p>
+                                        <div class="item-contact__img"><img src="img/contact-2.png" alt="Илья Шемякин"></div>
+                                    </div>
+                                    <div class="item-contact__contact"><a href="tel:89036034575" class="h6 link" data-txt="+7 (903) 603-45-75">+7 (903) 603-45-75</a></div>
+                                    <div class="item-contact__contact"><a href="mailto:ilia@globus-it.com" class="h6 link" data-txt="ilia@globus-it.com">ilia@globus-it.com</a></div>                                  
+                                </div>
+                                <!--item-contact-->
+                                <div class="item-contact">
+                                    <div class="item-contact__top">
+                                        <h5 class="grad-txt">Любовь Печерская</h5>
+                                        <p>по вопросам регистрации и покупки билетов</p>
+                                        <div class="item-contact__img"><img src="img/contact-3.png" alt="Любовь Печерская"></div>                                     
+                                    </div>
+                                    <div class="item-contact__contact"><a href="tel:89159406765" class="h6 link" data-txt="+7 (915) 940-67-65">+7 (915) 940-67-65</a></div>
+                                    <div class="item-contact__contact"><a href="mailto:l.pecherskaya@globus-ltd.com" class="h6 link" data-txt="l.pecherskaya@globus-ltd.com">l.pecherskaya@globus-ltd.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+         <!--footer-->
+        @@include('_footer.html', {"main": true})
+        @@include('_modal.html')
+    </div>
+    @@include('_js.html')
+</body>
+
+</html>

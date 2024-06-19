@@ -1,0 +1,38 @@
+.item-reviews {
+    color: $black;
+    padding: 40px 30px 40px 40px;
+    border-radius: 60px;
+    background: $white;
+    display: grid;
+    grid-template-columns: 1fr 1.02fr;
+    align-items: start;
+    gap: 20px;
+    h3 {
+        margin-bottom: 20px;
+    }
+    .media-cover {
+        padding-top: 77.61%;
+        border-radius: 40px;
+    }
+    .page-content {
+        max-width: 450px;
+        margin-bottom: 20px;
+    }
+    &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .btn {
+            margin-top: auto;
+        }
+    }
+    @media (max-width: $bp1) {
+        padding: 20px;
+        grid-template-columns: 1fr 1.7fr;
+        .media-cover {
+            padding-top: 128.52%;
+        }
+    }
+}
+
