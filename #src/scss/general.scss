@@ -228,9 +228,13 @@ h6, .h6 {
 }
 .main-btn, .stroke-btn {
   font-size: 20px;
+  line-height: 1.1;
   font-weight: bold;
   min-height: 52px;
-  padding: 14px 34px;
+  padding: 13px 34px;
+  span {
+    line-height: 1.2;
+  }
 }
 .main-btn {
   color: $black;
