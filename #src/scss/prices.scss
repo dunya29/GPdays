@@ -142,6 +142,7 @@
         transform: translateZ(-240px);       
         transition: all .4s linear;
         will-change: transform;
+        cursor: default;
         &:after {
             content: "";
             display: block;

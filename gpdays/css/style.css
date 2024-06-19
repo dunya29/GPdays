@@ -1917,6 +1917,7 @@ h6,
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
   will-change: transform;
+  cursor: default;
 }
 
 .swiper2 .swiper-slide:after,
