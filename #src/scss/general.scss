@@ -228,13 +228,9 @@ h6, .h6 {
 }
 .main-btn, .stroke-btn {
   font-size: 20px;
-  line-height: 1.1;
   font-weight: bold;
   min-height: 52px;
-  padding: 13px 34px;
-  span {
-    line-height: 1.2;
-  }
+  padding: 12px 34px 16px;
 }
 .main-btn {
   color: $black;
@@ -321,7 +317,6 @@ h6, .h6 {
   }
 }
 .link {
-  padding-bottom: 2px;
   display: inline-block;
   position: relative;
   &:after {
@@ -330,12 +325,14 @@ h6, .h6 {
     position: absolute;
     top: 0;
     left: 0;
+    height: 110%;
     color: transparent;
     background: linear-gradient(90deg, #4CC326 0%, #FFEA2A 100%);
     background-clip: text;
     opacity: 0;
     transition: all .3s linear;
     z-index: 1;
+    pointer-events: none;
   }
   &:hover {
     color: transparent !important;
@@ -343,7 +340,7 @@ h6, .h6 {
       opacity: 1;
     }
   }
-}
+} 
 .swiper {
   min-width: 0;
   overflow: hidden;

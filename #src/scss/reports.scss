@@ -158,6 +158,7 @@
         visibility: hidden;
         z-index: 1;
         transition: all .3s linear;
+        pointer-events: none;
         &.show {
             opacity: 1;
             visibility: visible;

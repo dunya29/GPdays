@@ -185,6 +185,28 @@ function tabSwitch(nav, block) {
       })
   });
 }
+//anchor
+if (document.querySelector(".js-anchor")) {
+  document.querySelectorAll(".js-anchor").forEach(item => {
+    item.addEventListener("click", e => {
+      e.preventDefault()
+      let windowTop = window.pageYOffset || document.documentElement.scrollTop
+      let dest = document.querySelector(item.getAttribute("href"))
+      let diff = 0
+      if (dest.querySelector(".reports__row") && dest.getBoundingClientRect().top < 0) {
+        diff = dest.querySelector(".reports__row").clientHeight
+      }
+      if (iconMenu.classList.contains("open")) {
+          iconMenu.click()
+          setTimeout(() => {
+              window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 20, behavior: 'smooth' })
+          }, 300);
+      } else {
+          window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 20, behavior: 'smooth' })
+      }       
+    })
+  })
+}
 //mob-menu show/unshow
 iconMenu.addEventListener("click", () => {
   if (iconMenu.classList.contains("open")) {
@@ -332,6 +354,31 @@ if (tourMod) {
   tourMod.querySelectorAll('input[name=tour-format]').forEach(item => {
     checkActiveFormat()
     item.addEventListener("change", checkActiveFormat)
+  })
+}
+// purchase form
+const purchForm = document.querySelectorAll(".purchase-mod__form")
+if (purchForm) {
+  purchForm.forEach(form => {
+    form.querySelectorAll("input[name=ticket-type").forEach(item => {
+      item.addEventListener('change', () => {
+        if (item.parentNode.classList.contains("all-tickets")) {
+          form.querySelectorAll("input[name=ticket-type").forEach(el => {       
+            el.removeAttribute("checked")
+            el.checked = false
+          })
+          item.setAttribute("checked", true)
+          item.checked = true
+        } else {
+          form.querySelectorAll("input[name=ticket-type").forEach(el => {       
+            if (el.parentNode.classList.contains("all-tickets")) {
+              el.removeAttribute("checked")
+              el.checked = false
+            }
+          })
+        }
+      })
+    })
   })
 }
 //reports

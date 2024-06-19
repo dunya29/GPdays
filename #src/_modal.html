@@ -92,18 +92,18 @@
                     <span>шаг 2: введите личные данные</span>
                     <span>шаг 3:<br>оформите заказ</span>
                 </div>
-                <form action="" class="form" onsubmit="event.preventDefault();openModal(document.querySelector('#purchase-mod-step2'))">
+                <form action="" class="form purchase-mod__form" onsubmit="event.preventDefault();openModal(document.querySelector('#purchase-mod-step2'))">
                     <div class="form__fieldset">
                         <div class="form__lbl">1. выберите билет</div>
                         <div class="form__row">
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="1" checked><p>All Inclusive</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="2"><p>Управление: день 1-2</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="3"><p>Профильные секции: Design & HR</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="4"><p>Управление: день 1</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="5"><p>Управление: день 2</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="6"><p>Разработка</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="7"><p>Afterparty</p></label>
-                            <label class="text-radio"><input type="radio" name="purchase-aim" value="8"><p>Online-трансляция</p></label>
+                            <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type"><p>All Inclusive</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1-2</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Профильные секции: Design & HR</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 2</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Разработка</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Afterparty</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Online-трансляция</p></label>
                         </div>
                     </div>
                     <div class="form__footer">
@@ -185,7 +185,7 @@
                     <span>шаг 2: введите личные данные</span>
                     <span>шаг 3:<br>оформите заказ</span>
                 </div>
-                <form action="" class="form" onsubmit="event.preventDefault();openModal(document.querySelector('#payment-mod'))">
+                <div>
                     <div class="mb-40 item-ticket">
                         <div class="item-ticket__left">
                             <h5 class="grad-txt">«Управление: день 1-2»</h5>
@@ -202,19 +202,19 @@
                         </div>
                     </div>
                     <div class="mb-40 add-extra hidden">
-                        <div class="mb-40 add-extra__inner">
+                        <form class="mb-40 add-extra__inner purchase-mod__form">
                             <h5>Добавить еще участника</h5>
                             <div class="form__fieldset">
                                 <div class="form__lbl">1. выберите билет</div>
                                 <div class="form__row">
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="1" checked><p>All Inclusive</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="2"><p>Управление: день 1-2</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="3"><p>Профильные секции: Design & HR</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="4"><p>Управление: день 1</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="5"><p>Управление: день 2</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="6"><p>Разработка</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="7"><p>Afterparty</p></label>
-                                    <label class="text-radio"><input type="radio" name="purchase-aim" value="8"><p>Online-трансляция</p></label>
+                                    <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type"><p>All Inclusive</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1-2</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Профильные секции: Design & HR</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 2</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Разработка</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Afterparty</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Online-трансляция</p></label>
                                 </div>
                             </div>
                             <div class="form__fieldset">
@@ -242,14 +242,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="btn main-btn">Сохранить</button>
-                        </div>
+                            <button type="submit" class="btn main-btn">Сохранить</button>
+                        </form>
                         <button type="button" class="btn stroke-btn add-extra__btn"><span class="link" data-txt="добавить еще участника">добавить еще участника</span></button>
                     </div>
                     <div class="form__footer">
-                        <button type="submit" class="btn main-btn">перейти к оплате</button>
+                        <button type="button" class="btn main-btn" onclick="openModal(document.querySelector('#payment-mod'))">перейти к оплате</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
