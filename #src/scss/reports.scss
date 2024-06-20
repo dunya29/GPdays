@@ -154,14 +154,25 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        opacity: 0;
-        visibility: hidden;
         z-index: 1;
-        transition: all .3s linear;
         pointer-events: none;
-        &.show {
+        &.bot-grad:after {
             opacity: 1;
-            visibility: visible;
+        }
+        &.top-grad:before {
+            opacity: 1;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 184px;
+            background: $black;
+            opacity: 0;
+            transition: all .3s linear;
         }
         &:after {
             content: "";
@@ -172,6 +183,8 @@
             width: 100%;
             height: 184px;
             background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, #141414 100%);
+            opacity: 0;
+            transition: all .3s linear;
         }
     }
     @media (max-width: $bp1) {

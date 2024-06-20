@@ -334,7 +334,7 @@ if (addExtra) {
       if (item.classList.contains("hidden")) {
         item.classList.remove("hidden")
       } else {
-        item.querySelector(".add-extra__content").insertAdjacentHTML("afterend", content)
+        item.querySelectorAll(".add-extra__content")[item.querySelectorAll(".add-extra__content").length - 1].insertAdjacentHTML("afterend", content)
       }   
     })
   })
@@ -502,7 +502,7 @@ function reportsModSuccess(form) {
 }
 // reports anim
 if (document.querySelector(".reports__scroll")) {
-  gsap.to(".reports__scroll", {
+  gsap.to(".reports__row", {
     y: -document.querySelector(".reports__row").offsetHeight ,
     ease: "none",
     scrollTrigger: {
@@ -512,11 +512,23 @@ if (document.querySelector(".reports__scroll")) {
       start: "top 20px top",
       pinSpacing:false,
       end: () => "+=" + document.querySelector(".reports__row").offsetHeight,
+      onEnter: () => {
+        document.querySelector(".reports__grad").classList.add("top-grad")
+      },
+      onLeave: () => {
+        document.querySelector(".reports__grad").classList.remove("top-grad")
+      },
+      onEnterBack: () => {
+        document.querySelector(".reports__grad").classList.add("top-grad")
+      },
+      onLeaveBack: () => {
+        document.querySelector(".reports__grad").classList.remove("top-grad")
+      },
       invalidateOnRefresh: true,
       anticipatePin: 1
     }
   })
-  gsap.to(".reports__scroll", {
+  gsap.to(".reports__row", {
     ease: "none",
     scrollTrigger: {
       trigger: ".reports",
@@ -524,13 +536,13 @@ if (document.querySelector(".reports__scroll")) {
       start: "top 20px top",
       end: "bottom bottom",
       onEnter: () => {
-        document.querySelector(".reports__grad").classList.add("show")
+        document.querySelector(".reports__grad").classList.add("bot-grad")
       },
       onLeaveBack: () => {
-        document.querySelector(".reports__grad").classList.remove("show")
+        document.querySelector(".reports__grad").classList.remove("bot-grad")
       },
       onLeave: () => {
-        document.querySelector(".reports__grad").classList.remove("show")
+        document.querySelector(".reports__grad").classList.remove("bot-grad")
       },
       invalidateOnRefresh: true,
       anticipatePin: 1
