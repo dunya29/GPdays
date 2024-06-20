@@ -512,18 +512,6 @@ if (document.querySelector(".reports__scroll")) {
       start: "top 20px top",
       pinSpacing:false,
       end: () => "+=" + document.querySelector(".reports__row").offsetHeight,
-      onEnter: () => {
-        document.querySelector(".reports__grad").classList.add("top-grad")
-      },
-      onLeave: () => {
-        document.querySelector(".reports__grad").classList.remove("top-grad")
-      },
-      onEnterBack: () => {
-        document.querySelector(".reports__grad").classList.add("top-grad")
-      },
-      onLeaveBack: () => {
-        document.querySelector(".reports__grad").classList.remove("top-grad")
-      },
       invalidateOnRefresh: true,
       anticipatePin: 1
     }
@@ -543,6 +531,29 @@ if (document.querySelector(".reports__scroll")) {
       },
       onLeave: () => {
         document.querySelector(".reports__grad").classList.remove("bot-grad")
+      },
+      invalidateOnRefresh: true,
+      anticipatePin: 1
+    }
+  })
+  gsap.to(".reports__row", {
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".reports",
+      scrub: 1,
+      start: "top 20px top",
+      end: "bottom top",
+      onEnter: () => {
+        document.querySelector(".reports__grad").classList.add("top-grad")
+      },
+      onLeave: () => {
+        document.querySelector(".reports__grad").classList.remove("top-grad")
+      },
+      onEnterBack: () => {
+        document.querySelector(".reports__grad").classList.add("top-grad")
+      },
+      onLeaveBack: () => {
+        document.querySelector(".reports__grad").classList.remove("top-grad")
       },
       invalidateOnRefresh: true,
       anticipatePin: 1
