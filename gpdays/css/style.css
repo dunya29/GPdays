@@ -5532,6 +5532,10 @@ h6,
     margin-bottom: 0;
   }
 
+  .item-prices__bottom::before {
+    top: -20px;
+  }
+
   .reg-mod .form__grid .text-radio p {
     padding: 20px 70px 20px 20px;
   }

@@ -160,6 +160,11 @@
             }
         }
     }
+    @media (max-width: $bp7) {
+        &__bottom::before {
+            top: -20px;
+        }
+    }
 }
 .prices {
     .container {
