@@ -222,6 +222,9 @@
             }
         }
     }
+    @media (max-width: $bp7) {
+        padding: 16px;
+    }
 }
 .add-extra {
     &.hidden .add-extra__inner {
@@ -533,6 +536,11 @@
     @media (max-width: $bp2) {
         .add-extra__inner {
             border-radius: 28px;
+        }
+    }
+    @media (max-width: $bp7) {
+        .add-extra__inner {
+            padding: 16px;
         }
     }
 }

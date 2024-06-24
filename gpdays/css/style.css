@@ -2353,6 +2353,10 @@ h6,
   opacity: 1;
 }
 
+.reports.top-grad .reports__sections {
+  background: #141414;
+}
+
 .reports.bot-grad .reports__grad:after {
   opacity: 1;
 }
@@ -2501,6 +2505,11 @@ h6,
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 20px;
+}
+
+.reports__tabs span {
+  -webkit-transition: all 0s;
+  transition: all 0s;
 }
 
 .reports__items,
@@ -5213,7 +5222,7 @@ h6,
   }
 
   .reports__grad::before {
-    height: 250px;
+    height: 240px;
   }
 
   .btn-close {
@@ -5536,8 +5545,40 @@ h6,
     top: -20px;
   }
 
+  .reports__tabs {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .reports__tabs::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .reports__tabs-item:first-child {
+    margin-left: 10px;
+  }
+
+  .reports__tabs-item:last-child {
+    margin-right: 10px;
+  }
+
+  .item-ticket {
+    padding: 16px;
+  }
+
   .reg-mod .form__grid .text-radio p {
     padding: 20px 70px 20px 20px;
+  }
+
+  .purchase-mod .add-extra__inner {
+    padding: 16px;
   }
 }
 
