@@ -200,6 +200,6 @@
         top: 100%;
         left: 100%;
         filter: blur(200px);
-        transform: translate(-48%, -45%);
+        transform: translate3d(-48%,-45%,0);
     }
 }

@@ -539,6 +539,8 @@ h6,
   position: absolute;
   -webkit-filter: blur(300px);
   filter: blur(300px);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   pointer-events: none;
   z-index: -1;
 }
@@ -1442,9 +1444,8 @@ h6,
   left: 100%;
   -webkit-filter: blur(200px);
   filter: blur(200px);
-  -webkit-transform: translate(-48%, -45%);
-  -ms-transform: translate(-48%, -45%);
-  transform: translate(-48%, -45%);
+  -webkit-transform: translate3d(-48%, -45%, 0);
+  transform: translate3d(-48%, -45%, 0);
 }
 
 .no-webp .intro {
@@ -4501,9 +4502,8 @@ h6,
     left: 0%;
     top: auto;
     bottom: 0;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 
   .item-advant {
@@ -4549,9 +4549,8 @@ h6,
 
   .faq__grad {
     right: 0;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
   }
 
   .item-prices {
@@ -4666,9 +4665,8 @@ h6,
 
   .partners__grad {
     left: 0%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 
   .item-parties {
@@ -5096,9 +5094,8 @@ h6,
     top: 40px;
     bottom: auto;
     right: 50%;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
     z-index: -1;
     -webkit-filter: blur(200px);
     filter: blur(200px);

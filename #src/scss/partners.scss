@@ -59,7 +59,7 @@
         }
         &__grad {
             left: 0%;
-            transform: translateX(-50%);
+            transform: translate3d(-50%,0,0);
         }
     }
     @media (max-width: $bp4) {

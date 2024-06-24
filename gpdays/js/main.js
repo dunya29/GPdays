@@ -277,6 +277,7 @@ if (swiper2) {
     const swiper = new Swiper(item.querySelector(".swiper"), {
         slidesPerView: 1,
         spaceBetween: 20,
+        loop: true,
         navigation: {
           prevEl: item.querySelector(".nav-btn--prev"),
           nextEl: item.querySelector(".nav-btn--next")
@@ -302,6 +303,7 @@ if (swiper1) {
     const swiper = new Swiper(item.querySelector(".swiper"), {
         slidesPerView: 1,
         spaceBetween: 20,
+        loop: true,
         navigation: {
           prevEl: item.querySelector(".nav-btn--prev"),
           nextEl: item.querySelector(".nav-btn--next")

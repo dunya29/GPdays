@@ -89,7 +89,7 @@
   @media (max-width: $bp3) {
     &__grad{
       right: 0;
-      transform: translateX(50%);
+      transform: translate3d(50%,0,0);
     }
   }
 }
