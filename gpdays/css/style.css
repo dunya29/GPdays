@@ -1647,6 +1647,11 @@ h6,
   pointer-events: none;
 }
 
+.intro__img img {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
 .intro__grad {
   bottom: -80px;
   right: 0;

@@ -43,6 +43,9 @@
         width: 44%;
         z-index: 1;
         pointer-events: none;
+        img {
+            animation-play-state: running;
+        }
     }
     &__grad {
         bottom: -80px;

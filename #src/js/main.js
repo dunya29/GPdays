@@ -208,11 +208,11 @@ if (document.querySelector(".js-anchor")) {
       if (iconMenu.classList.contains("open")) {
           iconMenu.click()
           setTimeout(() => {
-              window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 20, behavior: 'smooth' })
+              window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 60, behavior: 'smooth' })
           }, 300);
       } else {
-          window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 20, behavior: 'smooth' })
-      }       
+          window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 60, behavior: 'smooth' })
+      }     
     })
   })
 }
