@@ -34,6 +34,9 @@ body {
   -webkit-tap-highlight-color: transparent;
   word-break: break-word;
   overflow-x: hidden;
+  @media (max-width: $bp2) {
+    font-size: 16px;
+  }
 }
 .wrap {
   overflow: hidden;
@@ -51,27 +54,45 @@ h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 h1, .h1 {
   font-size: 68px;
-  @media (max-width: $bp3) {
+  @media (max-width: $bp2) {
     font-size: 44px;
+  }
+  @media (max-width: $bp7) {
+    font-size: 35px;
   }
 }
 h2, .h2 {
   font-size: 68px;
-  @media (max-width: $bp3) {
+  @media (max-width: $bp2) {
     font-size: 44px;
+  }
+  @media (max-width: $bp7) {
+    font-size: 35px;
   }
 }
 h3, .h3 {
   font-size: 44px;
+  @media (max-width: $bp2) {
+    font-size: 24px;
+  }
 }
 h4, .h4 {
   font-size: 32px;
+  @media (max-width: $bp2) {
+    font-size: 20px;
+  }
 }
 h5, .h5 {
   font-size: 24px;
+  @media (max-width: $bp2) {
+    font-size: 20px;
+  }
 }
 h6, .h6 {
   font-size: 20px;
+  @media (max-width: $bp2) {
+    font-size: 16px;
+  }
 }
 .rub {
   &:after {
@@ -87,6 +108,15 @@ h6, .h6 {
   @media (max-width: $bp1) {
     max-width: 1280px;
     padding: 0 10px;
+  }
+  @media (max-width: $bp2) {
+    max-width: 1070px;
+  }
+  @media (max-width: $bp3) {
+    max-width: 788px;
+  }
+  @media (max-width: $bp4) {
+    max-width: 560px;
   }
 }
 .fixed-block {
@@ -122,6 +152,9 @@ h6, .h6 {
 }
 .mb-40 {
   margin-bottom: 40px;
+  @media (max-width: $bp2) {
+    margin-bottom: 20px;
+  }
 }
 .section {
   margin-bottom: 120px;
@@ -131,10 +164,26 @@ h6, .h6 {
   @media (max-width: $bp1) {
     margin-bottom: 110px;
   }
+  @media (max-width: $bp2) {
+    margin-bottom: 80px;
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
+  @media (max-width: $bp3) {
+    margin-bottom: 60px;
+    &:last-child {
+      margin-bottom: 60px;
+    }
+  }
 }
 .sec-title {
   margin-top: -20px;
   margin-bottom: 30px;
+  @media (max-width: $bp2) {
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
 }
 .sec-grid {
   display: flex;
@@ -151,17 +200,21 @@ h6, .h6 {
       margin-right: 10px;
     }
   }
-  @media (max-width: $bp3) {
+  @media (max-width: $bp2) {
     display: block;
     .sec-lbl {
-      margin: 0 0 10px;
+      margin: 0 0 20px;
     }
   }
 }
 .sec-lbl {
   color: $white40;
+  @media (max-width: $bp2) {
+    font-size: 16px;
+  }
 }
 .page-content {
+  padding-bottom: 3px;
   h1, h2, h3, h4, h5, .h5, h6,.h6, p, hr, ol, ul {
     margin-bottom: 20px;
   }
@@ -203,11 +256,32 @@ h6, .h6 {
   & > :last-child {
     margin-bottom: 0;
   }
+  @media (max-width: $bp3) {
+    h1, h2, h3, h4, h5, .h5, h6,.h6, p, hr, ol, ul {
+      margin-bottom: 10px;
+    }
+    img, figure, iframe, video {
+      margin: 10px 0;   
+    }
+    p + p {
+      margin-top: 0;
+    }
+    ul li {
+      &::before {
+        top: 7px;
+      }
+    }
+  }
 } 
 .bg-grad {
   position: absolute;
   filter: blur(300px);
   pointer-events: none;
+  z-index: -1;
+  @media (max-width: $bp1) {
+    min-width: 720px;
+    filter: blur(250px);
+  }
 }
  .grad-txt {
   line-height: 1;
@@ -222,6 +296,7 @@ h6, .h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   cursor: pointer;
   transition: all .4s linear;
   overflow: hidden;
@@ -230,7 +305,15 @@ h6, .h6 {
   font-size: 20px;
   font-weight: bold;
   min-height: 52px;
-  padding: 12px 34px 16px;
+  padding: 5px 34px 7px;
+  @media (max-width: $bp2) {
+    font-size: 16px;
+    min-height: 46px;
+  }
+  @media (max-width: $bp4) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .main-btn {
   color: $black;
@@ -374,6 +457,12 @@ h6, .h6 {
     height: 100%;
     pointer-events: none;
   }
+  @media (max-width: $bp2) {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
 }
 [data-fancy] {
   cursor: pointer;
@@ -417,6 +506,12 @@ h6, .h6 {
   &__success {
     color: $green;
   }
+  @media (max-width: $bp2) {
+    input,
+    textarea, input::placeholder, textarea::placeholder {
+      font-size: 16px
+    }
+  }
 }
 .form {
   &__row {
@@ -446,6 +541,9 @@ h6, .h6 {
     }
     &.grid3 {
       grid-template-columns: repeat(3,1fr);
+      @media (max-width: $bp4) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
   &__footer {
@@ -473,6 +571,60 @@ h6, .h6 {
     margin-bottom: 40px;
     & > :last-child {
       margin-bottom: 0;
+    }
+  }
+  @media (max-width: $bp2) {
+    &__lbl {
+      margin-bottom: 10px;
+    }
+    &__fieldset, &__grid {
+      margin-bottom: 20px;
+    }
+    &__footer {
+      margin-top: 20px;
+      .main-btn {
+        margin-top: 20px;
+      }
+    }
+  }
+  @media (max-width: $bp3) {
+    &__footer {
+      .item-checkbox p {
+        font-size: 12px;
+      }
+    }
+  }
+  @media (max-width: $bp5) {
+    &__lbl {
+      font-size: 14px;
+    }
+    &__row {
+      align-items: stretch;
+      .text-checkbox, .text-radio {
+        flex: 0 0 calc(50% - 10px);
+        p {
+          width: 100%;
+          height: 100%;
+          min-width: 0;
+          padding: 6px 16px 8px;
+          min-height: 46px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  @media (max-width: $bp7) {
+    &__grid {
+      display: block;
+      .item-form, .text-radio, .text-checkbox {
+        width: 100%;
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
@@ -522,7 +674,7 @@ h6, .h6 {
     text-transform: lowercase;
     display: inline-block;
     text-align: center;
-    padding: 16px 34px;
+    padding: 13px 34px 17px;
     border: 1px solid $white20;
     border-radius: 100px;
     margin: 5px;
@@ -552,6 +704,13 @@ h6, .h6 {
         &::before {
           opacity: 1;
         }
+    }
+  }
+  @media (max-width: $bp2) {
+    a, span {
+      min-width: 119px;
+      font-size: 16px;
+      padding: 13px 20px 16px;
     }
   }
 }
@@ -593,6 +752,12 @@ h6, .h6 {
     z-index: 2;
     transition: all .8s cubic-bezier(.25,.46,.45,.94)
   }
+  @media (max-width: $bp2) {
+    &:after {
+      width: 57px;
+      height: 57px;
+    }
+  }
 }
 .item-checkbox, .item-radio {
   display: flex;
@@ -602,7 +767,10 @@ h6, .h6 {
     display: none;
   }
   input:checked + span {
-    &::before, &::after {
+    &::before {
+      background: linear-gradient(90deg, #4CC326 0%, #FFEA2A 100%);
+    }
+    &::after {
       opacity: 1;
     }
   }
@@ -611,15 +779,12 @@ h6, .h6 {
     width: 26px;
     height: 26px;
     border-radius: 8px;
-    border: 1px solid $white20;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     &::before, &::after {
       content: "";
-      opacity: 0;
-      background: linear-gradient(90deg, #4CC326 0%, #FFEA2A 100%);
       transition: all .3s linear;
     }
     &:before {     
@@ -634,13 +799,15 @@ h6, .h6 {
          linear-gradient(#fff 0 0);
       -webkit-mask-composite: destination-out; 
       mask-composite: exclude; 
-      border-radius: 8px;   
+      border-radius: 8px;
+      background: $white20;   
     }
     &:after {
-      content:"";
       width: 12px;
       height: 12px;
       border-radius: 4px; 
+      opacity: 0;
+      background: linear-gradient(90deg, #4CC326 0%, #FFEA2A 100%);
     }
   }
   p {
@@ -652,6 +819,16 @@ h6, .h6 {
     font-weight: 700;
     color: $white;
   }
+  @media (max-width: $bp2) {
+    span {
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+    }
+    p {
+      font-size: 16px;
+    }
+  } 
 }
 .item-radio {
   span, span::before, span::after {
@@ -682,7 +859,7 @@ h6, .h6 {
     color: $white20;
     text-transform: lowercase;
     display: inline-block;
-    padding: 16px 20px;
+    padding: 13px 20px 17px;
     cursor: pointer;
     transition: all .3s linear;
     &:before, &:after {
@@ -708,9 +885,19 @@ h6, .h6 {
       opacity: 0;    
     }
     svg {
+      flex: 0 0 45px;
       fill: $white10;
       margin-left: 10px;
       transition: all .3s linear;
+    }
+  }
+  @media (max-width: $bp2) {
+    input + p {
+      font-size: 16px;
+      padding-bottom: 16px;
+      svg {
+        flex: 0 0 35px;
+      }
     }
   }
 }

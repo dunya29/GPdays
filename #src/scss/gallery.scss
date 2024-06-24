@@ -4,7 +4,7 @@
         grid-template-columns: repeat(6,1fr);
         gap: 20px;
         .media-cover {
-            height: 268px;
+            padding-top: 122.54%;
             border-radius: 60px;
             cursor: pointer;
             &:hover img {
@@ -21,17 +21,17 @@
                 background: rgba(#000, 5%);
                 z-index: 1;
             }
-            &:nth-child(-n+2) {
-                height: 556px;
-            }
             &:nth-child(2n+1) {
                 grid-column-end: span 2;
+                padding-top: 58.85%;
             }
             &:nth-child(1) {
                 grid-column-end: span 4;
+                padding-top: 53.82%;
             }
             &:nth-child(2) {
                 grid-column-end: span 2;
+                padding-top: 109.66%;
             }
             img {
                 transition: all .8s cubic-bezier(.25,.46,.45,.94);
@@ -44,6 +44,53 @@
     &__block {
         transition: all .5s linear;
     }
+    @media (max-width: $bp1) {
+        &__items {
+            gap: 10px;
+            .media-cover {
+                padding-top: 132.68%;
+                &:nth-child(2) {
+                    padding-top: 105.32%;
+                }
+                &:nth-child(2n+1) {
+                    padding-top: 64.89%;
+                }
+                &:nth-child(1) {
+                    padding-top: 51.97%;
+                }
+            }
+        }
+    }
+    @media (max-width: $bp2) {
+        &__items {
+            .media-cover {
+                border-radius: 44px;
+            }
+        }
+    } 
+    @media (max-width: $bp3) {
+        &__items {
+            .media-cover {
+                border-radius: 28px;
+            }
+        }
+    } 
+    @media (max-width: $bp4) {
+        &__items {
+            grid-template-columns: 1fr 1fr;
+            .media-cover {
+                padding-top: 105%;
+                &:nth-child(2), &:nth-child(2n+1) {
+                    grid-column-end: span 1;
+                    padding-top: 105%;
+                }
+                &:nth-child(1),&:nth-child(3n+1) {
+                    grid-column-end: span 2;
+                    padding-top: 51.89%;
+                }
+            }
+        }
+    } 
 }
 .gallery, .reports {
     &__top {
@@ -89,6 +136,28 @@
                 font-size: 68px;
                 color: $white;
                 transition: all 0s linear;
+            }
+        }
+    }
+    @media (max-width: $bp2) {
+        &__top {
+            margin-top: -10px;
+            h2 {
+                margin: 0 10px 5px 0;
+            }
+        }
+        &__tabs {
+            margin-bottom: 5px;
+            &-item {
+                span {
+                    font-size: 24px;
+                }
+                &::after {
+                    font-size: 24px;
+                }
+                &.active span, input:checked + span {
+                    font-size: 44px;
+                }
             }
         }
     }

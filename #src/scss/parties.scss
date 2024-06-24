@@ -21,6 +21,13 @@
             padding-top: 51%;
         }
     }
+    @media (max-width: $bp3) {
+        padding: 16px;
+        border-radius: 28px;
+        .media-cover {
+            padding-top: 46%;
+        }
+    }
 }
 .parties {
     &__items {
@@ -31,6 +38,14 @@
     @media (max-width: $bp1) {
         &__items {
             gap: 10px;
+        }
+    }
+    @media (max-width: $bp4) {
+        &__items {
+            max-width: 370px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 0 auto;
         }
     }
 }

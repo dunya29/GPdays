@@ -11,10 +11,12 @@
         }
     }
     &__title {
-        line-height: 1.1;
         margin-bottom: 20px;
         span {
+            line-height: 0.9;
             display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 5px;
         }
     }
     &__title--tablet, &__title--mob {
@@ -24,14 +26,12 @@
         padding: 0 10px;
         background: $white10;
         border-radius: 12px;
-        margin-bottom: 10px;
     }
     &__light {
         color: $black;
         padding: 0 15px;
         background: $white;
-        border-radius: 100px;
-        margin-bottom: 10px;
+        border-radius: 23px;
     }
     &__grad {
         top: 100px;
@@ -41,19 +41,51 @@
         .page-content {
             margin-right: 10.5%;
         }
+        &__light {
+            padding: 0 10px;
+        }
+        &__grad {
+            left: -35%;
+        }
+    }
+    @media (min-width: $bp2) and (max-width: $bp1) {
+        &__title--desk {
+            display: none;
+        }
+        &__title--tablet {
+            display: block;
+            margin-left: 50px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .page-content {
+            max-width: 600px;
+            margin: 0;
+            ul {
+                max-width: 100%;
+            }
+        }
         &__title--desk {
             display: none;
         }
         &__title--tablet {
             display: block;
         }
+        &__grad {
+            left: 0%;
+            top: auto;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
     }
-    @media (max-width: $bp3) {
+    @media (max-width: $bp5) {
         &__title--tablet {
             display: none;
         }
         &__title--mob {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 }

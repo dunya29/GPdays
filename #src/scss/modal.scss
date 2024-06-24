@@ -16,6 +16,26 @@
         width: 100%;
         height: 100%;
     }
+    @media (max-width: $bp2) {
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+        padding: 13px;
+    }
+    @media (max-width: $bp3) {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        padding: 9px;
+    }
+    @media (max-width: $bp4) {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        padding: 7px;
+        opacity: 1;
+        border-color: $white40;
+    }
 }
 .form-progress {
     padding: 0 30px;
@@ -55,6 +75,27 @@
     }
     &::after {
         background: linear-gradient(90deg, #4CC326 0%, #FFEA2A 100%);
+    }
+    @media (max-width: $bp3) {
+        &::before, &::after {
+            bottom: 5px;
+        }
+        span {
+            font-size: 12px;
+            padding-bottom: 28px;
+            &:after {
+                content: "";
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+    @media (max-width: $bp5) {
+        padding: 0;
+        grid-template-columns: 90px 1fr 90px;
+        span {
+            font-size: 10px;
+        }
     }
 }
 .item-ticket {
@@ -165,14 +206,42 @@
             margin-top: 5px;
         }
     }
+    @media (max-width: $bp2) {
+        border-radius: 28px;
+    }
+    @media (max-width: $bp5) {
+        display: block;
+        &__right {
+            padding-left: 0;
+            padding-top: 40px;
+            &:before {
+                width: 100%;
+                height: 1px;
+                top: 20px;
+                left: 0;
+            }
+        }
+    }
 }
 .add-extra {
     &.hidden .add-extra__inner {
         display: none;
     }
     &__inner {
+        .main-btn {
+            width: 100%;
+            max-width: 304px;
+        }
         & > :last-child {
             margin-bottom: 0;
+        }
+    }
+    @media (max-width: $bp5) {
+        .btn {
+            width: 100%;
+        }
+        &__inner .main-btn {
+            max-width: 100%;
         }
     }
 }
@@ -193,7 +262,7 @@
         transition: all .3s ease-out;
         .modal__content {
             opacity: 1;
-            transform: translateX(0);
+            transform: translate(0);
             transition: all .3s .1s ease-out;
         }
     }
@@ -215,7 +284,7 @@
         }
     }
     &__close {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         .btn-close {
             margin-left: auto;
         }
@@ -224,7 +293,7 @@
         h2 {
             font-weight: 600;
             padding-bottom: 40px;
-            margin-right: 52px;
+            max-width: 788px;
         }
         p {
             max-width: 730px;
@@ -272,11 +341,98 @@
         right: 0;
         z-index: -1;
     }
+    @media (max-width: $bp2) {
+        .social {
+            margin-top: 24px;
+        }
+        &__content {
+            max-width: 750px;
+        }
+        &__top {
+            h2 {
+                max-width: 560px;
+                padding-bottom: 20px;
+            }
+            p {
+                margin-bottom: 20px;
+            }
+        }
+        &__bg {
+            max-width: 355px;
+        }
+    }
+    @media (max-width: $bp3) {
+        .custom-scroll {
+            padding: 16px;
+        }
+        &__close {
+            margin-bottom: 20px;
+        }
+        &__content {
+            max-width: 70%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    }
+    @media (max-width: $bp4) {
+        .custom-scroll {
+            padding: 0;
+            &::-webkit-scrollbar {
+                display: none;
+                height: 0;
+                width: 0;
+            }
+        }
+        .author {
+            grid-template-columns: 48px 1fr;
+            &__info p {
+                font-size: 16px;
+            }
+        }
+        &__close {
+            position: absolute;
+            top: -40px;
+            right: 16px
+        }
+        &__overlay {
+            padding-top: 60px;
+            display: flex;
+        }
+        &__content {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px 10px 20px;
+            height: auto;
+            max-height: 100%;
+            margin-top: auto;
+            transform: translate(0, 100px);
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+        }
+        &__top {
+            p {
+                font-size: 14px;
+            }
+        }
+        &__bg {
+            display: none;
+        }
+    }
 }
 .sponsor-mod {
-    .from__grid {
+    .form__grid {
         .item-form:first-child {
             grid-column: 1/4;
+        }
+    }
+    @media (max-width: $bp4) {
+        .form__grid {
+            .item-form:first-child,.item-form:nth-child(4) {
+                grid-column: 1/3;
+            }
         }
     }
 }
@@ -288,26 +444,26 @@
                 &:first-child {
                     grid-column: 1/3;
                     p {
-                        background: url(../img/reg-purch.svg) bottom 10px right 10px no-repeat;
+                        background-image: url(../img/reg-purch.svg);
                     }
                     input:checked + p {
-                        background: url(../img/reg-purch-active.svg) bottom 10px right 10px no-repeat;
+                        background-image: url(../img/reg-purch-active.svg);
                     }
                 }
                 &:nth-child(2) {
                     p {
-                        background: url(../img/reg-tour.svg) bottom 10px right 10px no-repeat;
+                        background-image: url(../img/reg-tour.svg);
                     }
                     input:checked + p {
-                        background: url(../img/reg-tour-active.svg) bottom 10px right 10px no-repeat;
+                        background-image: url(../img/reg-tour-active.svg);
                     }
                 }
                 &:nth-child(3) {
                     p {
-                        background: url(../img/reg-hackaton.svg) bottom 10px right 10px no-repeat;
+                        background-image: url(../img/reg-hackaton.svg);
                     }
                     input:checked + p {
-                        background: url(../img/reg-hackaton-active.svg) bottom 10px right 10px no-repeat;
+                        background-image: url(../img/reg-hackaton-active.svg);
                     }
                 }
                 p {
@@ -315,12 +471,54 @@
                     width: 100%;
                     min-height: 254px;
                     padding: 30px;
+                    background-position: bottom 10px right 10px;
+                    background-repeat: no-repeat;
                     &:before, &:after {
                         border-radius: 44px;
                     }
                 }
             }
         }
+    }
+    @media (max-width: $bp2) {
+        .form__grid {
+            .text-radio {
+                border-radius: 28px;
+                p {
+                    font-size: 20px;
+                    min-height: 180px;
+                    background-size: 100px auto;
+                    &::before, &::after {
+                        border-radius: 28px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        .form__grid {
+            .text-radio {
+                p {
+                    font-size: 16px;
+                    min-height: 146px;
+                    padding-right: 80px;
+                    background-size: 65px auto;
+                }
+            }
+        }
+    }
+    @media (max-width: $bp5) {
+        .form__grid {
+            grid-template-columns: 1fr;
+            .text-radio:first-child {
+                grid-column: 1/2;
+            }
+        }
+    }
+    @media (max-width: $bp7) {
+        .form__grid .text-radio p {
+            padding: 20px 70px 20px 20px;
+       }
     }
 }
 .purchase-mod {
@@ -331,9 +529,10 @@
         h5 {
             margin-bottom: 30px;
         }
-        .main-btn {
-            width: 100%;
-            max-width: 304px;
+    }
+    @media (max-width: $bp2) {
+        .add-extra__inner {
+            border-radius: 28px;
         }
     }
 }
@@ -344,6 +543,11 @@
         }
         &:after {
             width: 85px;
+        }
+    }
+    @media (max-width: $bp5) {
+        .form-progress::after {
+            width: 46px;
         }
     }
 }
@@ -418,6 +622,58 @@
             margin: 0 20px;
         }
     }
+    @media (max-width: $bp2) {
+        .form__grid {
+            .text-radio {
+                border-radius: 28px;
+                p {
+                    font-size: 20px;
+                    min-height: 110px;
+                    padding: 20px;
+                    &:after, &:before {
+                        border-radius: 28px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: $bp5) {
+        .form-progress::after {
+            width: calc(100% - 46px);
+        }
+        .form__grid {
+            grid-template-columns: 1fr;
+            .text-radio {
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+        &__promo {
+            display: block;
+            .btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+        &__det {
+            margin-bottom: 10px;
+            span {
+                font-size: 16px;
+            }
+            span:first-child {
+                font-size: 12px;
+            }
+            &.totalprice {
+                span {
+                    font-size: 20px;
+                }
+                span:first-child {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
 }
 .reg-mod, .payment-mod, .tour-mod, .hackaton-mod, .purchase-mod {
     .form {
@@ -443,5 +699,19 @@
     }
     &__info {
         margin-bottom: 40px;
+    }
+    @media (max-width: $bp2) {
+        &__info {
+            margin-bottom: 20px;
+        }
+    }
+}
+.success-mod, .error-mod {
+    @media (max-width: $bp4) {
+        .modal__content {
+            padding-top: 55px;
+            padding-bottom: 55px;
+            text-align: center;
+        }
     }
 }

@@ -25,6 +25,21 @@
             transform-origin: top right;
         }
     }
+    @media (max-width: $bp3) {
+        padding: 16px;
+        border-radius: 28px;
+        h5 {
+            max-width: 200px;
+        }
+        &__icon {
+            transform: scale(0.67);
+        }
+    }
+    @media (max-width: $bp4) {
+        h5 {
+            max-width: calc(100% - 50px);
+        }
+    }
 }
 .advant {
     &__row {
@@ -35,6 +50,12 @@
     @media (max-width: $bp1) {
         &__row {
             gap: 10px;
+        }
+    }
+    @media (max-width: $bp4) {
+        &__row {
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
     }
 }

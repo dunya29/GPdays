@@ -14,8 +14,61 @@
         margin-bottom: 20px;
     }
     .page-content {
-        flex: 1;
+        flex: 1 1 auto;
         margin-bottom: 10px;
+    }
+    .stroke-btn {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @media (max-width: $bp1) {
+        padding: 20px;
+        .page-content {
+            max-height: 180px;
+            padding: 0 15px 5px 0;
+            margin-bottom: 15px;
+            overflow: auto;
+            &::-webkit-scrollbar-thumb {
+                border-radius: 20px;
+                background-color: $black;
+                background-clip: padding-box;  
+            } 
+            &::-webkit-scrollbar {
+                width: 4px;
+                border-radius: 20px;
+                background-color: rgba($black, 5%);
+            }
+        }
+    }
+    @media (max-width: $bp3) {
+        padding: 12px;
+        border-radius: 28px;
+        h3 {
+            margin-bottom: 10px;
+        }
+        .page-content {
+            p, li {
+                font-size: 14px;
+            }
+            ul li {
+                &::before {
+                    top: 4px;
+                }
+            }
+        }
+        .media-cover {
+            border-radius: 24px;
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: $bp4) {
+        .page-content {
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+        }
     }
 }
 .guide {
@@ -24,5 +77,10 @@
     }
     &__block {
         transition: all .5s linear;
+    }
+    @media (max-width: $bp2) {
+        .tabs {
+            margin-bottom: 20px;
+        }
     }
 }

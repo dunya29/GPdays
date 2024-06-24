@@ -1,8 +1,8 @@
 .item-faq {
   max-width: 1084px;
-  margin-bottom: 24px;
-  &:last-child {
-    margin-bottom: 0;
+  margin-top: 24px;
+  &:first-child {
+    margin-top: 0;
   }
   .page-content {
     max-width: 1050px;
@@ -17,9 +17,9 @@
       transition: all .3s linear;
     }
     span {
+      min-width: 22px;
       font-weight: bold;
-      margin-top: 20px;
-      margin-right: 10px;
+      margin: 20px 10px 0 0;
       white-space: nowrap;
     }
     &:hover, &.active, &.open {
@@ -27,6 +27,30 @@
         color: transparent;
         background: linear-gradient(90deg, #4CC326 0%, #FFEA2A 100%);
         background-clip: text;
+      }
+    }
+  }
+  @media (max-width: $bp2) {
+    margin-top: 16px;
+    .accordion__header {
+      span {
+        min-width: 20px;
+        margin: 7px 8px 0 0;
+      }
+    }
+    .page-content {
+      padding-left: 28px;
+    }
+  }
+  @media (max-width: $bp3) {
+    .page-content {
+      p, li {
+          font-size: 14px;
+      }
+      ul li {
+          &::before {
+              top: 4px;
+          }
       }
     }
   }
@@ -51,5 +75,21 @@
   &__grad {
     right: -16%;
     bottom: -60%;
+  }
+  @media (max-width: $bp1) {
+    &__grad{
+      right: -30%;
+    }
+  }
+  @media (max-width: $bp2) {
+    .stroke-btn {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: $bp3) {
+    &__grad{
+      right: 0;
+      transform: translateX(50%);
+    }
   }
 }

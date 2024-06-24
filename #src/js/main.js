@@ -250,22 +250,17 @@ if (faq) {
   })
 }
 if (faq.querySelector(".faq__btn")) {
+  let txt = faq.querySelector(".faq__btn").textContent
   faq.querySelector(".faq__btn").addEventListener("click" , () => {
     let unshowedL = faq.querySelectorAll(".item-faq").length
     let showedL = faq.querySelectorAll(".item-faq.show").length
     if (unshowedL > showedL) {
-      for (let i = showedL; i < (showedL + 6); i++) {
-        if (faq.querySelectorAll(".item-faq")[i]) {
-          faq.querySelectorAll(".item-faq")[i].classList.add("show")
-        }
-      }
-      if (unshowedL - showedL <= 6) {
-        faq.querySelector(".faq__btn span").textContent = "Свернуть"
-        faq.querySelector(".faq__btn span").setAttribute("data-txt","Свернуть")
-      }
+      faq.querySelectorAll(".item-faq").forEach(item => item.classList.add("show"))
+      faq.querySelector(".faq__btn span").textContent = "Свернуть"
+      faq.querySelector(".faq__btn span").setAttribute("data-txt","Свернуть")
     } else {
-      faq.querySelector(".faq__btn span").textContent = "открыть еще 6 вопросов"
-      faq.querySelector(".faq__btn span").setAttribute("data-txt","открыть еще 6 вопросов")
+      faq.querySelector(".faq__btn span").textContent = txt
+      faq.querySelector(".faq__btn span").setAttribute("data-txt",txt)
       faq.querySelectorAll(".item-faq").forEach(item => item.classList.remove("show"))
       for (let i = 0; i < 5; i++) {
         if (faq.querySelectorAll(".item-faq")[i]) {
@@ -280,15 +275,20 @@ const swiper2 = document.querySelectorAll(".swiper2")
 if (swiper2) {
   swiper2.forEach(item => {
     const swiper = new Swiper(item.querySelector(".swiper"), {
-        slidesPerView: 2,
-        spaceBetween: 10,
+        slidesPerView: 1,
+        spaceBetween: 20,
         navigation: {
           prevEl: item.querySelector(".nav-btn--prev"),
           nextEl: item.querySelector(".nav-btn--next")
         },
         breakpoints: {
           1400.98: {
-            spaceBetween: 20
+            spaceBetween: 20,
+            slidesPerView: 2,
+          },
+          767.98: {
+            spaceBetween: 10,
+            slidesPerView: 2,
           }
         },
         speed: 800
@@ -305,6 +305,20 @@ if (swiper1) {
         navigation: {
           prevEl: item.querySelector(".nav-btn--prev"),
           nextEl: item.querySelector(".nav-btn--next")
+        },
+        breakpoints: {
+          1400.98: {
+            spaceBetween: 20,
+            slidesPerView: 1,
+          },
+          1200.98: {
+            spaceBetween: 10,
+            slidesPerView: 1,
+          },
+          767.98: {
+            spaceBetween: 10,
+            slidesPerView: 2
+          }
         },
         speed: 800
     })
@@ -397,12 +411,16 @@ function setReportsGrid() {
   let initH 
   let secCount = Number(reports.getAttribute("data-grid"))
   if (window.innerWidth > 1200.98) {
+    let tabletH = 0
+    if (window.innerWidth < 1400.98) {
+      tabletH = 18
+    }
     if ([ 5, 4, 3 ].includes(secCount)) {
-      initH = 144 / 60
+      initH = ( 144 + tabletH ) / 60
     } else if ([ 2, 1 ].includes(secCount)) {
-      initH = 120 / 60
+      initH = ( 120 + tabletH )  / 60
     } else {
-      initH = 156 / 60
+      initH = ( 156 + tabletH )  / 60
     }
   } else {
     initH = 186 / 60
@@ -510,7 +528,7 @@ if (document.querySelector(".reports__scroll")) {
       pin: true,
       scrub: 1,
       start: "top 20px top",
-      pinSpacing:false,
+      pinSpacing: false,
       end: () => "+=" + document.querySelector(".reports__row").offsetHeight,
       invalidateOnRefresh: true,
       anticipatePin: 1
@@ -524,13 +542,13 @@ if (document.querySelector(".reports__scroll")) {
       start: "top 20px top",
       end: "bottom bottom",
       onEnter: () => {
-        document.querySelector(".reports__grad").classList.add("bot-grad")
+        document.querySelector(".reports").classList.add("bot-grad")
       },
       onLeaveBack: () => {
-        document.querySelector(".reports__grad").classList.remove("bot-grad")
+        document.querySelector(".reports").classList.remove("bot-grad")
       },
       onLeave: () => {
-        document.querySelector(".reports__grad").classList.remove("bot-grad")
+        document.querySelector(".reports").classList.remove("bot-grad")
       },
       invalidateOnRefresh: true,
       anticipatePin: 1
@@ -544,16 +562,16 @@ if (document.querySelector(".reports__scroll")) {
       start: "top 20px top",
       end: "bottom top",
       onEnter: () => {
-        document.querySelector(".reports__grad").classList.add("top-grad")
+        document.querySelector(".reports").classList.add("top-grad")
       },
       onLeave: () => {
-        document.querySelector(".reports__grad").classList.remove("top-grad")
+        document.querySelector(".reports").classList.remove("top-grad")
       },
       onEnterBack: () => {
-        document.querySelector(".reports__grad").classList.add("top-grad")
+        document.querySelector(".reports").classList.add("top-grad")
       },
       onLeaveBack: () => {
-        document.querySelector(".reports__grad").classList.remove("top-grad")
+        document.querySelector(".reports").classList.remove("top-grad")
       },
       invalidateOnRefresh: true,
       anticipatePin: 1
