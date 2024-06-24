@@ -161,4 +161,19 @@
             }
         }
     }
+    @media (max-width: $bp7) {
+        &__tabs {
+            &-item {
+                span {
+                    font-size: 20px;
+                }
+                &::after {
+                    font-size: 20px;
+                }
+                &.active span, input:checked + span {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
 }
