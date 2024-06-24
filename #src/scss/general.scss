@@ -451,6 +451,10 @@ h6, .h6 {
   padding: 14px;
   border-radius: 50%;
   background: $white;
+  &.swiper-button-disabled {
+    visibility: hidden;
+    opacity: 0;
+  }
   svg {
     stroke: $black;
     width: 100%;

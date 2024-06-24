@@ -751,6 +751,11 @@ h6,
   background: #FFFFFF;
 }
 
+.nav-btn.swiper-button-disabled {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .nav-btn svg {
   stroke: #141414;
   width: 100%;
