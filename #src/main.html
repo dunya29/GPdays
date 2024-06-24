@@ -5,7 +5,8 @@
     "title": "Главная"
 })
 
-<body>
+<body class="no-scroll">
+    @@include('_preloader.html')
     <svg style="position:absolute; visibility: hidden">
         <defs>
         <linearGradient id="green-gradient" x1="6.36914" y1="7.87822" x2="18.9349" y2="7.87822" gradientUnits="userSpaceOnUse">
@@ -199,61 +200,61 @@
                     </div>
                     <div class="reports__scroll">
                         <div class="reports__sections">
-                            <span>заказчики</span>
-                            <span>дизайн</span>
-                            <span>управление агентством</span>
-                            <span>HR</span>
-                            <span>техническая часть</span>
-                            <span>интервью</span>
-                            <span>спикеры</span>
-                            <span>хакатон</span>
+                            <span data-section="заказчики">заказчики</span>
+                            <span data-section="дизайн">дизайн</span>
+                            <span data-section="управление агентством">управление агентством</span>
+                            <span data-section="HR">HR</span>
+                            <span data-section="техническая часть">техническая часть</span>
+                            <span data-section="интервью">интервью</span>
+                            <span data-section="спикеры">спикеры</span>
+                            <span data-section="хакатон">хакатон</span>
                         </div>
                         <div class="reports__row">
                             <div class="reports__time"></div>
                             <div class="reports__block">
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="заказчики">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "12:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "14:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:00", "end": "16:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="дизайн">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:30", "end": "12:00", "title": "Как использовать продуктовый подход в аутсорс-разработке и улучшить бизнес-процессы: новые юниты, задачи, отраслевые эксперты-партнеры, продуктовый аутсорсинг и генерация бэклога"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:30", "end": "13:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "14:00", "end": "15:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:30", "end": "16:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="управление агентством">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:00", "end": "11:10", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "11:30", "end": "12:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:00", "end": "14:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "14:30", "end": "17:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="HR">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "12:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "14:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:00", "end": "16:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="техническая часть">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 2, "start": "09:30", "end": "12:00", "title": "Как использовать продуктовый подход в аутсорс-разработке и улучшить бизнес-процессы: новые юниты, задачи, отраслевые эксперты-партнеры, продуктовый аутсорсинг и генерация бэклога"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:30", "end": "13:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "14:00", "end": "15:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "15:30", "end": "16:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="интервью">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:10", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "11:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:00", "end": "13:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "14:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="спикеры">
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "09:00", "end": "10:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "10:30", "end": "11:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "12:00", "end": "13:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "15:30", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="хакатон">
                                     @@include("_item-report-hackaton.html",{"info": true, "txt": true, "author": 0, "start": "09:00", "end": "13:00", "title": "Тема: как использовать продуктовый подход в аутсорс-разработке"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "13:30", "end": "15:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})
                                     @@include("_item-report.html",{"info": false, "txt": false, "author": 1, "start": "16:00", "end": "17:00", "title": "Почему важно развивать культуру ошибок, работая в IT"})

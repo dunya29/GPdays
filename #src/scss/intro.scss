@@ -94,6 +94,9 @@
         &__grad {
             right: -17%
         }
+        &__inner {
+            min-height: 100vh;
+        }
         &__content {
             max-width: 58.4%;
         }
@@ -106,12 +109,12 @@
         &__img {
             bottom: -120px;
             right: -20px;
-            width: 53%;        
+            width: 50%;        
         }
         &__ill {
             img {
                 &:nth-child(1) {
-                    top: 40%;
+                    top: 36%;
                     right: 1%
                 }
                 &:nth-child(2) {

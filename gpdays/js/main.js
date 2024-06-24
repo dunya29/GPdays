@@ -1,3 +1,12 @@
+if (document.querySelector(".preloader")) {
+  window.onload = function () {
+    window.setTimeout(() => {
+      enableScroll()
+      document.body.classList.add('loaded');
+    }, 1500);
+  };
+}
+const header = document.querySelector(".header")
 const mobMenu = document.querySelector(".mob-menu")
 const iconMenu = document.querySelector(".icon-menu")
 const modalOpenBtn = document.querySelectorAll(".mod-open-btn")
@@ -207,6 +216,20 @@ if (document.querySelector(".js-anchor")) {
     })
   })
 }
+window.addEventListener("scroll", () => {
+  let windowTop = window.pageYOffset || document.documentElement.scrollTop
+  if (windowTop > 1) {
+    header.classList.add("scrolled")
+    if (header.classList.contains("header--main")) {
+      header.classList.add("header--dark")
+    }
+  } else {
+    header.classList.remove("scrolled")
+    if (header.classList.contains("header--main")) {
+      header.classList.remove("header--dark")
+    }
+  }
+})
 //mob-menu show/unshow
 iconMenu.addEventListener("click", () => {
   if (iconMenu.classList.contains("open")) {
@@ -286,10 +309,12 @@ if (swiper2) {
           1400.98: {
             spaceBetween: 20,
             slidesPerView: 2,
+            loop: false
           },
           767.98: {
             spaceBetween: 10,
             slidesPerView: 2,
+            loop: false
           }
         },
         speed: 800
@@ -312,14 +337,17 @@ if (swiper1) {
           1400.98: {
             spaceBetween: 20,
             slidesPerView: 1,
+            loop: false
           },
           1200.98: {
             spaceBetween: 10,
             slidesPerView: 1,
+            loop: false
           },
           767.98: {
             spaceBetween: 10,
-            slidesPerView: 2
+            slidesPerView: 2,
+            loop: false
           }
         },
         speed: 800
@@ -399,6 +427,7 @@ if (purchForm) {
 }
 //reports
 const reports = document.querySelector(".reports")
+let reportsTl = []
 function reportTime(item) {
   let start = item.getAttribute("data-start").split(":")
   let end = item.getAttribute("data-end").split(":")
@@ -409,6 +438,7 @@ function reportTime(item) {
   return data
 }
 function setReportsGrid() {
+  if (reports) {
   //1 min height
   let initH 
   let secCount = Number(reports.getAttribute("data-grid"))
@@ -482,6 +512,16 @@ function setReportsGrid() {
       })
     })
   }
+  reports.classList.remove(".top-grad")
+  reports.classList.remove(".bot-grad")
+  document.querySelector(".reports__row").style.transform=null
+  let triggers = ScrollTrigger.getAll();
+  console.log(triggers)
+  triggers.forEach( trigger => {      
+    trigger.kill(true);
+  });
+  reportsTrigger(); 
+  }
 }
 setReportsGrid()
 window.addEventListener("resize", setReportsGrid)
@@ -504,81 +544,113 @@ function reportsModSuccess(form) {
     document.querySelector(".reports__top .stroke-btn span").textContent = "Все секции"
     document.querySelector(".reports__top .stroke-btn span").setAttribute("data-txt","Все секции") 
   }
-  // !!!!!!!! для демонстрации удалить потом
   if (checkedSecLength != 0) {
-    reports.querySelectorAll(".reports__items").forEach(item => item.style.display = "none")
-    reports.querySelectorAll(".reports__sections span").forEach(item => item.style.display = "none")
+    reports.querySelectorAll(".reports__items").forEach(item => {
+      item.style.display = "none"
+      form.querySelectorAll("input[name=report-sec]:checked").forEach(inp => {
+        if (item.getAttribute("data-section") == inp.value) {
+          item.style.display = "block"
+        }
+      })
+    })
+    reports.querySelectorAll(".reports__sections span").forEach(item => {
+      item.style.display = "none"
+      form.querySelectorAll("input[name=report-sec]:checked").forEach(inp => {
+        if (item.getAttribute("data-section") == inp.value) {
+          item.style.display = "flex"
+        }
+      })
+    })
   } else {
     reports.querySelectorAll(".reports__items").forEach(item => item.style.display = "block")
     reports.querySelectorAll(".reports__sections span").forEach(item => item.style.display = "flex")
   }
-  for (let i = 0; i < checkedSecLength; i++) {
-    reports.querySelectorAll(".reports__items")[i].style.display = "block"
-    reports.querySelectorAll(".reports__sections span")[i].style.display = "flex"
-  } 
-  /////////////////////
   setReportsGrid()
   closeModal(document.querySelector("#reports-mod"))
 }
+function reportDayOnClick() {
+  let count = document.querySelectorAll(".reports__sections span").length
+  document.querySelector(".reports").setAttribute("data-grid", count)
+  document.querySelectorAll(".reports-mod input[name=report-sec]").forEach(inp => {
+    inp.checked = false
+    inp.removeAttribute("checked")
+  })
+  document.querySelector(".reports__top .stroke-btn span").textContent = "Все секции"
+  document.querySelector(".reports__top .stroke-btn span").setAttribute("data-txt","Все секции")
+}
+const reportModDays = document.querySelectorAll(".reports-mod input[name=report-day]")
+if (reportModDays) {
+  reportModDays.forEach((item,idx) => {
+    item.addEventListener('change', () => {
+      document.querySelectorAll(".reports__tabs input[name=report-tab-day]")[idx].click()
+    })
+  })
+}
 // reports anim
-if (document.querySelector(".reports__scroll")) {
-  gsap.to(".reports__row", {
-    y: -document.querySelector(".reports__row").offsetHeight ,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".reports",
-      pin: true,
-      scrub: 1,
-      start: "top 20px top",
-      pinSpacing: false,
-      end: () => "+=" + document.querySelector(".reports__row").offsetHeight,
-      invalidateOnRefresh: true,
-      anticipatePin: 1
-    }
-  })
-  gsap.to(".reports__row", {
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".reports",
-      scrub: 1,
-      start: "top 20px top",
-      end: "bottom bottom",
-      onEnter: () => {
-        document.querySelector(".reports").classList.add("bot-grad")
-      },
-      onLeaveBack: () => {
-        document.querySelector(".reports").classList.remove("bot-grad")
-      },
-      onLeave: () => {
-        document.querySelector(".reports").classList.remove("bot-grad")
-      },
-      invalidateOnRefresh: true,
-      anticipatePin: 1
-    }
-  })
-  gsap.to(".reports__row", {
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".reports",
-      scrub: 1,
-      start: "top 20px top",
-      end: "bottom top",
-      onEnter: () => {
-        document.querySelector(".reports").classList.add("top-grad")
-      },
-      onLeave: () => {
-        document.querySelector(".reports").classList.remove("top-grad")
-      },
-      onEnterBack: () => {
-        document.querySelector(".reports").classList.add("top-grad")
-      },
-      onLeaveBack: () => {
-        document.querySelector(".reports").classList.remove("top-grad")
-      },
-      invalidateOnRefresh: true,
-      anticipatePin: 1
-    }
-  })
+function reportsTrigger() {
+  if (document.querySelector(".reports__scroll")) {
+    gsap.to(".reports__row", {
+      y: -document.querySelector(".reports__row").offsetHeight ,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".reports",
+        pin: true,
+        scrub: 1,
+        start: "top 20px top",
+        pinSpacing: false,
+        end: () => "+=" + document.querySelector(".reports__row").offsetHeight,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+      }
+    })
+    gsap.to(".reports__row", {
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".reports",
+        scrub: 1,
+        start: "top 20px top",
+        end: "bottom bottom",
+        onEnter: () => {
+          document.querySelector(".reports").classList.add("bot-grad")
+        },
+        onLeaveBack: () => {
+          document.querySelector(".reports").classList.remove("bot-grad")
+        },
+        onLeave: () => {
+          document.querySelector(".reports").classList.remove("bot-grad")
+        },
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+      }
+    })
+    gsap.to(".reports__row", {
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".reports",
+        scrub: 1,
+        start: "top 20px top",
+        end: "bottom top",
+        onEnter: () => {
+          document.querySelector(".reports").classList.add("top-grad")
+          header.classList.add("hidden")
+        },
+        onLeave: () => {
+          document.querySelector(".reports").classList.remove("top-grad")
+          header.classList.remove("hidden")
+        },
+        onEnterBack: () => {
+          document.querySelector(".reports").classList.add("top-grad")
+          header.classList.add("hidden")
+        },
+        onLeaveBack: () => {
+          document.querySelector(".reports").classList.remove("top-grad")
+          header.classList.remove("hidden")
+        },
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+      }
+    })
+  }
 }
 //add parallax to img in intro sec
 let introILL = document.querySelectorAll(".intro__ill-img")

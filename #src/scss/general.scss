@@ -34,6 +34,11 @@ body {
   -webkit-tap-highlight-color: transparent;
   word-break: break-word;
   overflow-x: hidden;
+  &.loaded {
+    .preloader {
+      transform: translateX(-100%);
+    }
+  }
   @media (max-width: $bp2) {
     font-size: 16px;
   }
@@ -484,15 +489,18 @@ h6, .h6 {
     color: $white;
     padding: 13px 20px;
     border: 1px solid $white20;
-    border-radius: 100px;
     &::placeholder {
       color: $white20;
     }
+  }
+  input {
+    border-radius: 100px;
   }
   textarea {
     min-height: 100px;
     resize: vertical;
     overflow: hidden;
+    border-radius: 28px;
     &::-webkit-resizer {
       display: none;
     }

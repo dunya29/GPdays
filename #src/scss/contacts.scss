@@ -40,6 +40,10 @@
     }
     &__img {
         margin-top: auto;
+        overflow: hidden;
+        img {
+            max-height: 100%;
+        }
     }
     &__contact {   
         min-height: 73px;    

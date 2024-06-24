@@ -593,6 +593,17 @@
         padding-top: 20px;
         border-top: 1px solid $white10;
         margin-top: auto;
+        .media-cover {
+            align-self: center;
+        }
+        &__info {
+            align-self: start;
+            min-height: 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
     }
     &__content {
         height: 100%;
@@ -643,6 +654,9 @@
                 display: block;
                 transition: all .3s linear;
             }
+        }
+        .author__info {
+            min-height: 48px;
         }
     }
 }

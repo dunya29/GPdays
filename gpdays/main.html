@@ -18,7 +18,14 @@
     <title>Главная</title>
 </head>
 
-<body>
+<body class="no-scroll">
+    <!--preloader-->
+<div class="preloader">
+    <div class="preloader__inner">
+        <img class="preloader__image preloader__image1" src="img/title.svg" alt="">
+        <img class="preloader__image preloader__image2"src="img/title.svg" alt="">
+    </div>
+</div>
     <svg style="position:absolute; visibility: hidden">
         <defs>
         <linearGradient id="green-gradient" x1="6.36914" y1="7.87822" x2="18.9349" y2="7.87822" gradientUnits="userSpaceOnUse">
@@ -475,19 +482,19 @@
                     </div>
                     <div class="reports__scroll">
                         <div class="reports__sections">
-                            <span>заказчики</span>
-                            <span>дизайн</span>
-                            <span>управление агентством</span>
-                            <span>HR</span>
-                            <span>техническая часть</span>
-                            <span>интервью</span>
-                            <span>спикеры</span>
-                            <span>хакатон</span>
+                            <span data-section="заказчики">заказчики</span>
+                            <span data-section="дизайн">дизайн</span>
+                            <span data-section="управление агентством">управление агентством</span>
+                            <span data-section="HR">HR</span>
+                            <span data-section="техническая часть">техническая часть</span>
+                            <span data-section="интервью">интервью</span>
+                            <span data-section="спикеры">спикеры</span>
+                            <span data-section="хакатон">хакатон</span>
                         </div>
                         <div class="reports__row">
                             <div class="reports__time"></div>
                             <div class="reports__block">
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="заказчики">
                                     <!--item-report-->
 <div class="item-report" data-start="09:00" data-end="10:00">
     <div class="item-report__inner">
@@ -717,7 +724,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="дизайн">
                                     <!--item-report-->
 <div class="item-report" data-start="09:30" data-end="12:00">
     <div class="item-report__inner">
@@ -947,7 +954,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="управление агентством">
                                     <!--item-report-->
 <div class="item-report" data-start="10:00" data-end="11:10">
     <div class="item-report__inner">
@@ -1177,7 +1184,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="HR">
                                     <!--item-report-->
 <div class="item-report" data-start="09:00" data-end="10:00">
     <div class="item-report__inner">
@@ -1407,7 +1414,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="техническая часть">
                                     <!--item-report-->
 <div class="item-report" data-start="09:30" data-end="12:00">
     <div class="item-report__inner">
@@ -1643,7 +1650,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="интервью">
                                     <!--item-report-->
 <div class="item-report" data-start="09:00" data-end="10:10">
     <div class="item-report__inner">
@@ -1873,7 +1880,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="спикеры">
                                     <!--item-report-->
 <div class="item-report" data-start="09:00" data-end="10:00">
     <div class="item-report__inner">
@@ -2103,7 +2110,7 @@
     </div>
 </div>
                                 </div>
-                                <div class="reports__items">
+                                <div class="reports__items" data-section="хакатон">
                                     <!--item-report-->
 <div class="item-report" data-start="09:00" data-end="13:00">
     <div class="item-report__inner">
@@ -3811,14 +3818,14 @@
                     <div class="form__fieldset">
                         <div class="form__lbl">2. выберите секции</div>
                         <div class="form__row">
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>заказчики</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>дизайн</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>управление агентством</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>HR</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>техническая часть</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>интервью</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>спикеры</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="report-sec"><p>спикеры</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="заказчики"><p>заказчики</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="дизайн"><p>дизайн</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="управление агентством"><p>управление агентством</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="интервью"><p>интервью</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="HR"><p>HR</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="спикеры"><p>спикеры</p></label>                           
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="техническая часть"><p>техническая часть</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="report-sec" value="хакатон"><p>хакатон</p></label>
                         </div>
                     </div>
                     <div class="form__footer">
