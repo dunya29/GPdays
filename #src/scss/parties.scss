@@ -15,6 +15,9 @@
         border-radius: 24px;
         margin-bottom: 20px;
     }
+    &__bottom {
+        min-height: 66px;
+    }
     @media (max-width: $bp1) {
         padding: 20px;
         .media-cover {

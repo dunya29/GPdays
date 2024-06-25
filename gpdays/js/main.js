@@ -439,9 +439,11 @@ function reportTime(item) {
 }
 function setReportsGrid() {
   if (reports) {
+    let gridCount = document.querySelector(".day_sections_reports.active").querySelectorAll(".reports__items.show").length
+    reports.setAttribute("data-grid", gridCount)
   //1 min height
   let initH 
-  let secCount = Number(reports.getAttribute("data-grid"))
+  let secCount = gridCount
   if (window.innerWidth > 1200.98) {
     let tabletH = 0
     if (window.innerWidth < 1400.98) {
@@ -512,15 +514,6 @@ function setReportsGrid() {
       })
     })
   }
-  reports.classList.remove(".top-grad")
-  reports.classList.remove(".bot-grad")
-  document.querySelector(".reports__row").style.transform=null
-  let triggers = ScrollTrigger.getAll();
-  console.log(triggers)
-  triggers.forEach( trigger => {      
-    trigger.kill(true);
-  });
-  reportsTrigger(); 
   }
 }
 setReportsGrid()
@@ -546,10 +539,10 @@ function reportsModSuccess(form) {
   }
   if (checkedSecLength != 0) {
     reports.querySelectorAll(".reports__items").forEach(item => {
-      item.style.display = "none"
+      item.classList.remove("show")
       form.querySelectorAll("input[name=report-sec]:checked").forEach(inp => {
         if (item.getAttribute("data-section") == inp.value) {
-          item.style.display = "block"
+          item.classList.add("show")
         }
       })
     })
@@ -562,25 +555,60 @@ function reportsModSuccess(form) {
       })
     })
   } else {
-    reports.querySelectorAll(".reports__items").forEach(item => item.style.display = "block")
+    reports.querySelectorAll(".reports__items").forEach(item => item.classList.add("show"))
     reports.querySelectorAll(".reports__sections span").forEach(item => item.style.display = "flex")
   }
+  document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
+    inp.parentNode.style.display = "block"
+  })
+  document.querySelectorAll(".day_sections_reports").forEach(item => {
+    if (item.querySelectorAll(".reports__items.show").length == 0) {
+      document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
+        if (Number(inp.getAttribute("data-report-day")) == Number(item.getAttribute("data-day-id"))) {
+          inp.parentNode.style.display = "none"
+        }
+      })
+      if (item.classList.contains("active")) {
+        let findDay = Array.from(document.querySelectorAll(".day_sections_reports")).find(item => item.querySelectorAll(".reports__items.show").length > 0)
+        if (findDay) {
+          let dayAttr = findDay.getAttribute("data-day-id")
+          document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
+            if (inp.getAttribute("data-report-day") == dayAttr) {
+              inp.click()
+            }
+          })
+        }
+      }
+    }
+  })
   setReportsGrid()
   closeModal(document.querySelector("#reports-mod"))
 }
 function reportDayOnClick() {
-  let count = document.querySelectorAll(".reports__sections span").length
-  document.querySelector(".reports").setAttribute("data-grid", count)
-  document.querySelectorAll(".reports-mod input[name=report-sec]").forEach(inp => {
-    inp.checked = false
-    inp.removeAttribute("checked")
+  document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
+    inp.addEventListener('change', () => {
+      document.querySelectorAll(".day_sections_reports").forEach(item => {
+        if (item.getAttribute("data-day-id") == inp.getAttribute('data-report-day') ) {
+          item.classList.add("active")
+        } else {
+          item.classList.remove("active")
+        }
+      })
+      document.querySelectorAll(".day_sections").forEach(item => {
+        if (item.getAttribute("data-day-id") == inp.getAttribute('data-report-day') ) {
+          item.classList.add("active")
+        } else {
+          item.classList.remove("active")
+        }
+      })
+      setReportsGrid()
+    })
   })
-  document.querySelector(".reports__top .stroke-btn span").textContent = "Все секции"
-  document.querySelector(".reports__top .stroke-btn span").setAttribute("data-txt","Все секции")
-}
+} 
+reportDayOnClick()
 const reportModDays = document.querySelectorAll(".reports-mod input[name=report-day]")
 if (reportModDays) {
-  reportModDays.forEach((item,idx) => {
+  reportModDays.forEach(item => {
     item.addEventListener('change', () => {
       document.querySelectorAll(".reports__tabs input[name=report-tab-day]")[idx].click()
     })
@@ -652,6 +680,7 @@ function reportsTrigger() {
     })
   }
 }
+reportsTrigger()
 //add parallax to img in intro sec
 let introILL = document.querySelectorAll(".intro__ill-img")
 if (introILL) {

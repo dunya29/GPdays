@@ -109,6 +109,12 @@
             margin-right: 0;
         }
     }
+    &__items {
+        display: none;
+        &.show {
+            display: block;
+        }
+    }
     &__block {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -675,5 +681,19 @@
         &__row {
             grid-template-columns: 1fr
         }
+    }
+}
+.day_sections {
+    width: 100%;
+    display: none;
+    &.active {
+        display: flex;
+    }
+}
+.day_sections_reports {
+    width: 100%;
+    display: none;
+    &.active {
+        display: flex;
     }
 }

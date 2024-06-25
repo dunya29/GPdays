@@ -2282,6 +2282,10 @@ h6,
   margin-bottom: 20px;
 }
 
+.item-parties__bottom {
+  min-height: 66px;
+}
+
 .parties__items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2677,6 +2681,14 @@ h6,
   margin-right: 0;
 }
 
+.reports__items {
+  display: none;
+}
+
+.reports__items.show {
+  display: block;
+}
+
 .reports__block {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -3028,6 +3040,28 @@ h6,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.day_sections {
+  width: 100%;
+  display: none;
+}
+
+.day_sections.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.day_sections_reports {
+  width: 100%;
+  display: none;
+}
+
+.day_sections_reports.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .btn-close {
