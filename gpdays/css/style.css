@@ -632,10 +632,6 @@ h6,
 
 .bg-grad {
   position: absolute;
-  -webkit-filter: blur(300px);
-  filter: blur(300px);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
   pointer-events: none;
   z-index: -1;
 }
@@ -1612,7 +1608,7 @@ h6,
 .intro__content {
   max-width: 59%;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .intro__content h5 {
@@ -1643,7 +1639,7 @@ h6,
   bottom: -130px;
   right: 10px;
   width: 44%;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -1653,8 +1649,11 @@ h6,
 }
 
 .intro__grad {
-  bottom: -80px;
+  bottom: 0;
   right: 0;
+  -webkit-transform: translate(34%, 34%);
+  -ms-transform: translate(34%, 34%);
+  transform: translate(34%, 34%);
   z-index: 1;
 }
 
@@ -1755,8 +1754,11 @@ h6,
 }
 
 .about__grad {
-  top: 100px;
-  left: -20%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .item-advant {
@@ -1930,8 +1932,11 @@ h6,
 }
 
 .faq__grad {
-  right: -16%;
-  bottom: -60%;
+  bottom: 0%;
+  right: 0%;
+  -webkit-transform: translate(55%, 50%);
+  -ms-transform: translate(55%, 50%);
+  transform: translate(55%, 50%);
 }
 
 .item-prices {
@@ -2065,9 +2070,11 @@ h6,
 }
 
 .prices__grad {
-  right: -10%;
-  bottom: 0;
-  z-index: -1;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(55%, -50%);
+  -ms-transform: translate(55%, -50%);
+  transform: translate(55%, -50%);
 }
 
 .swiper2,
@@ -2238,8 +2245,11 @@ h6,
 }
 
 .partners__grad {
-  left: -15%;
-  bottom: 0;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .item-parties {
@@ -3672,8 +3682,12 @@ h6,
 }
 
 .footer__grad {
-  right: -10%;
-  bottom: 10%;
+  bottom: 0%;
+  right: -39%;
+  -webkit-transform: translateY(30%) scale(0.75);
+  -ms-transform: translateY(30%) scale(0.75);
+  transform: translateY(30%) scale(0.75);
+  opacity: 0.2;
 }
 
 .intro {
@@ -3712,18 +3726,12 @@ h6,
   }
 
   .bg-grad {
-    min-width: 720px;
-    -webkit-filter: blur(250px);
-    filter: blur(250px);
+    min-width: 900px;
   }
 
   .header__container {
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-
-  .intro__grad {
-    right: -17%;
   }
 
   .intro__inner {
@@ -3789,10 +3797,6 @@ h6,
     padding: 0 10px;
   }
 
-  .about__grad {
-    left: -35%;
-  }
-
   .item-advant {
     padding: 20px;
   }
@@ -3826,10 +3830,6 @@ h6,
 
   .item-contact__contact {
     padding: 0 20px;
-  }
-
-  .faq__grad {
-    right: -30%;
   }
 
   .item-prices .rub {
@@ -3868,10 +3868,6 @@ h6,
 
   .prices__btns {
     max-width: 836px;
-  }
-
-  .prices__grad {
-    right: -30%;
   }
 
   .swiper2,
@@ -3926,10 +3922,6 @@ h6,
 
   .partners__items {
     gap: 130px 30px;
-  }
-
-  .partners__grad {
-    left: -35%;
   }
 
   .item-parties {
@@ -4346,6 +4338,7 @@ h6,
 
   .item-reviews {
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     gap: 20px;
   }
 
@@ -4677,11 +4670,7 @@ h6,
   }
 
   .about__grad {
-    left: 0%;
-    top: auto;
-    bottom: 0;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
+    top: 70%;
   }
 
   .item-advant {
@@ -4723,12 +4712,6 @@ h6,
 
   .item-faq .page-content ul li::before {
     top: 4px;
-  }
-
-  .faq__grad {
-    right: 0;
-    -webkit-transform: translate3d(50%, 0, 0);
-    transform: translate3d(50%, 0, 0);
   }
 
   .item-prices {
@@ -4839,12 +4822,6 @@ h6,
     max-height: 90px;
     -o-object-fit: contain;
     object-fit: contain;
-  }
-
-  .partners__grad {
-    left: 0%;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
   }
 
   .item-parties {
@@ -5202,7 +5179,7 @@ h6,
     display: block;
     position: absolute;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
   }
 
   .intro:before {
@@ -5271,16 +5248,11 @@ h6,
   }
 
   .intro__grad {
-    width: 200%;
-    max-width: 200%;
-    top: 40px;
+    top: -40px;
     bottom: auto;
     right: 50%;
     -webkit-transform: translate3d(50%, 0, 0);
     transform: translate3d(50%, 0, 0);
-    z-index: -1;
-    -webkit-filter: blur(200px);
-    filter: blur(200px);
   }
 
   .intro__ill img {
@@ -5364,11 +5336,6 @@ h6,
 
   .partners__items a img {
     max-height: 40px;
-  }
-
-  .partners__grad {
-    -webkit-filter: blur(150px);
-    filter: blur(150px);
   }
 
   .parties__items {

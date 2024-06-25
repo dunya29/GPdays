@@ -73,23 +73,13 @@
     }
   }
   &__grad {
-    right: -16%;
-    bottom: -60%;
-  }
-  @media (max-width: $bp1) {
-    &__grad{
-      right: -30%;
-    }
+    bottom: 0%;
+    right: 0%;
+    transform: translate(55%,50%);
   }
   @media (max-width: $bp2) {
     .stroke-btn {
       margin-top: 20px;
-    }
-  }
-  @media (max-width: $bp3) {
-    &__grad{
-      right: 0;
-      transform: translate3d(50%,0,0);
     }
   }
 }

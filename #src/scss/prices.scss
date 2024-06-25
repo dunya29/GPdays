@@ -182,16 +182,13 @@
         }
     }
     &__grad {
-        right: -10%;
-        bottom: 0;
-        z-index: -1;
+        right: 0;
+        top: 50%;
+        transform: translate(55%,-50%);    
     }
     @media (max-width: $bp1) {
         &__btns {
             max-width: 836px;
-        }
-        &__grad {
-            right: -30%
         }
     }
     @media (max-width: $bp2) {

@@ -23,15 +23,13 @@
         }
     }
     &__grad {
-        left: -15%;
-        bottom: 0;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%,-50%);
     }
     @media (max-width: $bp1) {
         &__items {
             gap: 130px 30px;
-        }
-        &__grad {
-            left: -35%;
         }
     }
     @media (max-width: $bp2) {
@@ -57,10 +55,6 @@
                 }
             }
         }
-        &__grad {
-            left: 0%;
-            transform: translate3d(-50%,0,0);
-        }
     }
     @media (max-width: $bp4) {
         &__items {
@@ -69,9 +63,6 @@
                     max-height: 40px;
                 }
             }
-        }
-        &__grad {
-            filter: blur(150px);
         }
     }
 }

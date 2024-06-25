@@ -70,8 +70,10 @@
         width: 44%;
     }
     &__grad {
-        right: -10%;
-        bottom: 10%;
+        bottom: 0%;
+        right: -39%;
+        transform: translateY(30%) scale(0.75);
+        opacity: 0.2;
     }
     @media (max-width: $bp1) {
         &__content {

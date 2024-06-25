@@ -280,13 +280,10 @@ h6, .h6 {
 } 
 .bg-grad {
   position: absolute;
-  filter: blur(300px);
-  transform: translate3d(0,0,0);
   pointer-events: none;
   z-index: -1;
   @media (max-width: $bp1) {
-    min-width: 720px;
-    filter: blur(250px);
+    min-width: 900px;
   }
 }
  .grad-txt {

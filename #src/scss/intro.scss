@@ -15,7 +15,7 @@
 	&__content {
         max-width: 59%;
         position: relative;
-        z-index: 2;
+        z-index: 3;
         h5 {
             margin-bottom: 16px;
         }
@@ -41,15 +41,16 @@
         bottom: -130px;
         right: 10px;
         width: 44%;
-        z-index: 1;
+        z-index: 2;
         pointer-events: none;
         img {
             animation-play-state: running;
         }
     }
     &__grad {
-        bottom: -80px;
+        bottom: 0;
         right: 0;
+        transform: translate(34%,34%);
         z-index: 1;
     }
     &__bottom {
@@ -94,9 +95,6 @@
         }
     }
     @media (max-width: $bp1) {
-        &__grad {
-            right: -17%
-        }
         &__inner {
             min-height: 100vh;
         }
@@ -233,7 +231,7 @@
             display: block;
             position: absolute;
             width: 100%;
-            z-index: 2;
+            z-index: 3;
         }
         &:before {
             top: 425px;
@@ -283,15 +281,10 @@
             }
         }
         &__grad {
-            width: 200%;
-            max-width: 200%;
-            top: 40px;
+            top: -40px;
             bottom: auto;
             right: 50%;
-            transform: translate3d(50%,0,0);
-            z-index: -1;
-            filter: blur(200px);
-        
+            transform: translate3d(50%,0,0);        
         }
         &__ill {
             img {

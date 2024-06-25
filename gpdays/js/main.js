@@ -279,8 +279,8 @@ if (faq.querySelector(".faq__btn")) {
     let showedL = faq.querySelectorAll(".item-faq.show").length
     if (unshowedL > showedL) {
       faq.querySelectorAll(".item-faq").forEach(item => item.classList.add("show"))
-      faq.querySelector(".faq__btn span").textContent = "Свернуть"
-      faq.querySelector(".faq__btn span").setAttribute("data-txt","Свернуть")
+      faq.querySelector(".faq__btn span").textContent = "свернуть"
+      faq.querySelector(".faq__btn span").setAttribute("data-txt","свернуть")
     } else {
       faq.querySelector(".faq__btn span").textContent = txt
       faq.querySelector(".faq__btn span").setAttribute("data-txt",txt)

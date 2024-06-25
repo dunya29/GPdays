@@ -34,8 +34,9 @@
         border-radius: 23px;
     }
     &__grad {
-        top: 100px;
-        left: -20%;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%,-50%);
     }
     @media (max-width: $bp1) {
         .page-content {
@@ -43,9 +44,6 @@
         }
         &__light {
             padding: 0 10px;
-        }
-        &__grad {
-            left: -35%;
         }
     }
     @media (min-width: $bp2) and (max-width: $bp1) {
@@ -72,10 +70,7 @@
             display: block;
         }
         &__grad {
-            left: 0%;
-            top: auto;
-            bottom: 0;
-            transform: translate3d(-50%,0,0);
+            top: 70%;
         }
     }
     @media (max-width: $bp5) {

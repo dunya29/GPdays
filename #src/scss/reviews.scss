@@ -39,6 +39,7 @@
     }
     @media (max-width: $bp2) {
         grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
         gap: 20px;
         .media-cover {
             padding-top: 53.63%;
