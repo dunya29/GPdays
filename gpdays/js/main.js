@@ -205,30 +205,37 @@ if (document.querySelector(".js-anchor")) {
       if (dest.querySelector(".reports__row") && dest.getBoundingClientRect().top < 0) {
         diff = dest.querySelector(".reports__row").clientHeight
       }
+      destPos = dest.getBoundingClientRect().top < 0 ? dest.getBoundingClientRect().top - 60 : dest.getBoundingClientRect().top - 20
       if (iconMenu.classList.contains("open")) {
           iconMenu.click()
           setTimeout(() => {
-              window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 60, behavior: 'smooth' })
+              window.scrollTo({ top: windowTop - diff + destPos, behavior: 'smooth' })
           }, 300);
       } else {
-          window.scrollTo({ top: windowTop - diff + dest.getBoundingClientRect().top - 60, behavior: 'smooth' })
+          window.scrollTo({ top: windowTop - diff + destPos, behavior: 'smooth' })
       }     
     })
   })
 }
+
+// fixed header
+function scrollPos() {
+  return window.pageYOffset || document.documentElement.scrollTop;
+}
+let lastScroll = scrollPos();
 window.addEventListener("scroll", () => {
-  let windowTop = window.pageYOffset || document.documentElement.scrollTop
-  if (windowTop > 1) {
-    header.classList.add("scrolled")
-    if (header.classList.contains("header--main")) {
-      header.classList.add("header--dark")
-    }
+  if (scrollPos() > 1) {
+      header.classList.add("fixed")
+      if ((scrollPos() > lastScroll && !header.classList.contains("unshow"))) {
+          header.classList.add("unshow")
+      } else if (scrollPos() < lastScroll && header.classList.contains("unshow")) {
+          header.classList.remove("unshow")
+      }
   } else {
-    header.classList.remove("scrolled")
-    if (header.classList.contains("header--main")) {
-      header.classList.remove("header--dark")
-    }
+      header.classList.remove("fixed")
+      header.classList.remove("unshow")
   }
+  lastScroll = scrollPos()
 })
 //mob-menu show/unshow
 iconMenu.addEventListener("click", () => {
@@ -429,8 +436,8 @@ if (purchForm) {
 const reports = document.querySelector(".reports")
 let reportsTl = []
 function reportTime(item) {
-  let start = item.getAttribute("data-start").split(":")
-  let end = item.getAttribute("data-end").split(":")
+  let start = item.getAttribute("data-start").includes(":") ? item.getAttribute("data-start").split(":") : item.getAttribute("data-start").split(".")
+  let end = item.getAttribute("data-end").includes(":") ? item.getAttribute("data-end").split(":") : item.getAttribute("data-end").split(".")
   let data = {
     start: [Number(start[0].split()[0]) == 0 ? Number(start[0].substring(1)) : Number(start[0]), Number(start[1].split()[0]) == 0 ? Number(start[1].substring(1)) : Number(start[1])], 
     end: [Number(end[0].split()[0]) == 0 ? Number(end[0].substring(1)) : Number(end[0]), Number(end[1].split()[0]) == 0 ? Number(end[1].substring(1)) : Number(end[1])]
@@ -438,7 +445,7 @@ function reportTime(item) {
   return data
 }
 function setReportsGrid() {
-  if (reports) {
+  if (reports && reports.querySelector(".reports__tabs input[name=report-tab-day]")) {
     let gridCount = document.querySelector(".day_sections_reports.active").querySelectorAll(".reports__items.show").length
     reports.setAttribute("data-grid", gridCount)
   //1 min height
@@ -462,17 +469,19 @@ function setReportsGrid() {
   let startArr = []
   let endArr = []
   let minStart, maxEnd
-  if (reports && reports.querySelector(".item-report")) {
-    reports.querySelectorAll(".item-report").forEach((item,idx) => {
-      let thisTime = reportTime(item)
-      startArr.push(thisTime.start[0])
-      endArr.push(thisTime.end[0])
-    })
-    minStart = Math.min(...startArr)
-    maxEnd = Math.max(...endArr)
+  if (reports.querySelector(".item-report")) {
     reports.querySelector(".reports__time").innerHTML = ""
-    for (let i = minStart; i <= maxEnd; i++) {
-      reports.querySelector(".reports__time").innerHTML += `<span>${i < 10 ? "0" + i : i}:00</span>`
+    if (reports.querySelector(".day_sections_reports.active .reports__items.show .item-report")) {
+      reports.querySelectorAll(".day_sections_reports.active .reports__items.show .item-report").forEach((item,idx) => {
+        startArr.push(reportTime(item).start[0])
+        endArr.push(reportTime(item).end[0])
+        minStart = Math.min(...startArr)
+        maxEnd = Math.max(...endArr)
+        reports.querySelector(".reports__time").innerHTML = ""
+        for (let i = minStart; i <= maxEnd; i++) {
+          reports.querySelector(".reports__time").innerHTML += `<span>${i < 10 ? "0" + i : i}:00</span>`
+        }
+      })
     }
     reports.querySelectorAll(".reports__items").forEach(sec => {
       sec.querySelectorAll(".item-report").forEach((item,idx) => {
@@ -559,21 +568,30 @@ function reportsModSuccess(form) {
     reports.querySelectorAll(".reports__sections span").forEach(item => item.style.display = "flex")
   }
   document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
-    inp.parentNode.style.display = "block"
+    inp.parentNode.classList.remove("hidden")
+    inp.classList.remove("hidden-slash")
   })
   document.querySelectorAll(".day_sections_reports").forEach(item => {
     if (item.querySelectorAll(".reports__items.show").length == 0) {
-      document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
+      document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach((inp,idx) => {
         if (Number(inp.getAttribute("data-report-day")) == Number(item.getAttribute("data-day-id"))) {
-          inp.parentNode.style.display = "none"
+          inp.parentNode.classList.add("hidden")
+          if (idx == 0) {
+            for (let i=0; i< document.querySelectorAll(".reports__tabs input[name=report-tab-day]").length - 1; i++) {
+              if (!document.querySelectorAll(".reports__tabs input[name=report-tab-day]")[idx+i].classList.contains("hidden")) {
+                document.querySelectorAll(".reports__tabs input[name=report-tab-day]")[idx+i].classList.add("hidden-slash")
+                return
+              }
+            }
+          }
         }
       })
       if (item.classList.contains("active")) {
         let findDay = Array.from(document.querySelectorAll(".day_sections_reports")).find(item => item.querySelectorAll(".reports__items.show").length > 0)
         if (findDay) {
-          let dayAttr = findDay.getAttribute("data-day-id")
+          let dayAttr = Number(findDay.getAttribute("data-day-id"))
           document.querySelectorAll(".reports__tabs input[name=report-tab-day]").forEach(inp => {
-            if (inp.getAttribute("data-report-day") == dayAttr) {
+            if (Number(inp.getAttribute("data-report-day")) == dayAttr) {
               inp.click()
             }
           })
@@ -605,14 +623,8 @@ function reportDayOnClick() {
     })
   })
 } 
-reportDayOnClick()
-const reportModDays = document.querySelectorAll(".reports-mod input[name=report-day]")
-if (reportModDays) {
-  reportModDays.forEach(item => {
-    item.addEventListener('change', () => {
-      document.querySelectorAll(".reports__tabs input[name=report-tab-day]")[idx].click()
-    })
-  })
+if (reports && document.querySelector(".reports__tabs input[name=report-tab-day]")) {
+  reportDayOnClick()
 }
 // reports anim
 function reportsTrigger() {
@@ -680,7 +692,6 @@ function reportsTrigger() {
     })
   }
 }
-reportsTrigger()
 //add parallax to img in intro sec
 let introILL = document.querySelectorAll(".intro__ill-img")
 if (introILL) {

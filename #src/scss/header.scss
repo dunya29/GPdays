@@ -1,6 +1,6 @@
 .header {
     z-index: 500;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,19 +17,30 @@
         opacity: 0;
         pointer-events: none;
     }
-    &.scrolled {
+    &.fixed {
+        position: fixed;
+        &:before {
+            opacity: 1;
+        }
         .header__container {
             padding-top: 10px;
             padding-bottom: 10px;
         }
-    }
-    &.header--dark {
-        &:before {
-            opacity: 1;
+        &.unshow {
+            visibility: hidden;
+            .header__container {
+                transform: translateY(-100%);
+            }
+            &:before {
+                opacity: 0;
+            }
         }
     }
     &.hidden {
-        transform: translateY(-100%);
+        visibility: hidden;
+        .header__container {
+            transform: translateY(-100%);
+        }
     }
     &__container {
         padding-top: 20px;

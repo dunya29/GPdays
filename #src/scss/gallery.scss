@@ -121,14 +121,14 @@
                 transition: all .3s linear;
                 cursor: pointer;
             }
-            &:after {
+            &::before {
                 content: "/";
                 font-size: 44px;
                 color: $white20;
                 margin: 0 5px;
             }
-            &:last-child {
-                &:after {
+            &:first-child {
+                &::before {
                     content: none;
                 }
             }
@@ -136,6 +136,14 @@
                 font-size: 68px;
                 color: $white;
                 transition: all 0s linear;
+            }
+            &.hidden {
+                display: none;
+            }
+            &.hidden-slash {
+                &:before {
+                    content: none;
+                }
             }
         }
     }

@@ -558,9 +558,11 @@
         }
     }
     @media (max-width: $bp2) {
+        height: auto!important;
         margin-top: 10px !important;
         &__inner {
             height: 100%;
+            min-height: 186px;
             transform: translateY(0);
         }
     }
