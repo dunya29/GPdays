@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    cursor: pointer;
     h3 {
         margin-bottom: 16px;
     }
@@ -232,7 +233,6 @@
         transform: translateZ(-240px);       
         transition: all .4s linear;
         will-change: transform;
-        cursor: default;
         &:after {
             content: "";
             display: block;

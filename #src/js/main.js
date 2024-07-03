@@ -1,10 +1,10 @@
 if (document.querySelector(".preloader")) {
-  window.onload = function () {
-    window.setTimeout(() => {
+  document.addEventListener("DOMContentLoaded", (event) => {
+    setTimeout(() => {
       enableScroll()
       document.body.classList.add('loaded');
-    }, 1500);
-  };
+    }, 100);
+  });
 }
 const header = document.querySelector(".header")
 const mobMenu = document.querySelector(".mob-menu")
@@ -17,7 +17,7 @@ const errorModal = document.querySelector("#error-mod")
 let animSpd = 400
 //get path to sprite id
 function sprite(id) {
-  return '<svg><use xlink:href="img/icons/sprite.svg#' + id + '"></use></svg>'
+  return '<svg><use xlink:href="html/img/icons/sprite.svg#' + id + '"></use></svg>'
 }
 //scroll pos
 function scrollPos() {
@@ -98,22 +98,22 @@ function setSuccessTxt(title = false, txt = false, subject = false) {
   successModal.querySelector(".modal__top h2").innerHTML = title ? title : "Заявка<br>успешно отправлена"
   successModal.querySelector(".modal__top p").textContent = txt ? txt : ""
   switch (subject) {
-    case "football": successModal.querySelector(".modal__bg").setAttribute("src", "img/modal-football.svg")
+    case "football": successModal.querySelector(".modal__bg").setAttribute("src", "html/img/modal-football.svg")
     break;
-    case "hackaton": successModal.querySelector(".modal__bg").setAttribute("src", "img/modal-hackaton.svg")
+    case "hackaton": successModal.querySelector(".modal__bg").setAttribute("src", "html/img/modal-hackaton.svg")
     break;
-    default: successModal.querySelector(".modal__bg").setAttribute("src", "img/modal-deer.svg")
+    default: successModal.querySelector(".modal__bg").setAttribute("src", "html/img/modal-deer.svg")
   }
 }
 function setErrorTxt(title = false, txt = false, subject = false) {
   errorModal.querySelector(".modal__top h2").innerHTML = title ? title : "Что-то пошло не так"
   errorModal.querySelector(".modal__top p").textContent = txt ? txt : ""
   switch (subject) {
-    case "football": errorModal.querySelector(".modal__bg").setAttribute("src", "img/modal-football.svg")
+    case "football": errorModal.querySelector(".modal__bg").setAttribute("src", "html/img/modal-football.svg")
     break;
-    case "hackaton": errorModal.querySelector(".modal__bg").setAttribute("src", "img/modal-hackaton.svg")
+    case "hackaton": errorModal.querySelector(".modal__bg").setAttribute("src", "html/img/modal-hackaton.svg")
     break;
-    default: errorModal.querySelector(".modal__bg").setAttribute("src", "img/modal-deer.svg")
+    default: errorModal.querySelector(".modal__bg").setAttribute("src", "html/img/modal-deer.svg")
   }
 }
 function formReset(form) {
@@ -304,61 +304,115 @@ if (faq.querySelector(".faq__btn")) {
 const swiper2 = document.querySelectorAll(".swiper2")
 if (swiper2) {
   swiper2.forEach(item => {
-    const swiper = new Swiper(item.querySelector(".swiper"), {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-          prevEl: item.querySelector(".nav-btn--prev"),
-          nextEl: item.querySelector(".nav-btn--next")
-        },
-        breakpoints: {
-          1400.98: {
-            spaceBetween: 20,
-            slidesPerView: 2,
-            loop: false
+    let swiperDesk = false
+    let swiperMob = false
+    let itemSwiperDesk, itemSwiperMob
+    function initSwiper() {
+      if (window.innerWidth > 767.98 && !swiperDesk) {
+        if (swiperMob) {
+          swiperMob = false
+          itemSwiperMob.destroy(true, true)
+        }
+        swiperDesk = true
+        itemSwiperDesk = new Swiper(item.querySelector(".swiper"), {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          observer: true,
+          observeParents: true,
+          navigation: {
+            prevEl: item.querySelector(".nav-btn--prev"),
+            nextEl: item.querySelector(".nav-btn--next")
           },
-          767.98: {
-            spaceBetween: 10,
-            slidesPerView: 2,
-            loop: false
-          }
-        },
-        speed: 800
-    })
+          breakpoints: {
+            1400.98: {
+              spaceBetween: 20,
+            },
+          },
+          speed: 800
+      })
+      } else if (window.innerWidth < 767.98 && !swiperMob) {
+        item.querySelectorAll(".nav-btn").forEach(btn => btn.removeAttribute("disabled"))
+        if (swiperDesk) {
+          swiperDesk = false
+          itemSwiperDesk.destroy(true, true)
+        }
+        swiperMob = true
+        itemSwiperMob = new Swiper(item.querySelector(".swiper"), {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          observer: true,
+          observeParents: true,
+          loop: item.querySelectorAll(".swiper-slide").length > 2,
+          navigation: {
+            prevEl: item.querySelector(".nav-btn--prev"),
+            nextEl: item.querySelector(".nav-btn--next")
+          },
+          speed: 800
+        })
+      }
+    }
+    initSwiper()
+    window.addEventListener("resize", initSwiper)
   })
 }
 //swiper1
 const swiper1 = document.querySelectorAll(".swiper1")
 if (swiper1) {
   swiper1.forEach(item => {
-    const swiper = new Swiper(item.querySelector(".swiper"), {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-          prevEl: item.querySelector(".nav-btn--prev"),
-          nextEl: item.querySelector(".nav-btn--next")
-        },
-        breakpoints: {
-          1400.98: {
-            spaceBetween: 20,
-            slidesPerView: 1,
-            loop: false
+    let swiperDesk = false
+    let swiperMob = false
+    let itemSwiperDesk, itemSwiperMob
+    function initSwiper() {
+      if (window.innerWidth > 767.98 && !swiperDesk) {
+        if (swiperMob) {
+          swiperMob = false
+          itemSwiperMob.destroy(true, true)
+        }
+        swiperDesk = true
+        itemSwiperDesk = new Swiper(item.querySelector(".swiper"), {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          observer: true,
+          observeParents: true,
+          navigation: {
+            prevEl: item.querySelector(".nav-btn--prev"),
+            nextEl: item.querySelector(".nav-btn--next")
           },
-          1200.98: {
-            spaceBetween: 10,
-            slidesPerView: 1,
-            loop: false
+          breakpoints: {
+            1400.98: {
+              spaceBetween: 20,
+              slidesPerView: 1,
+            },
+            1200.98: {
+              spaceBetween: 10,
+              slidesPerView: 1,
+            },
           },
-          767.98: {
-            spaceBetween: 10,
-            slidesPerView: 2,
-            loop: false
-          }
-        },
-        speed: 800
-    })
+          speed: 800
+        })
+      } else if (window.innerWidth < 767.98 && !swiperMob) {
+        item.querySelectorAll(".nav-btn").forEach(btn => btn.removeAttribute("disabled"))
+        if (swiperDesk) {
+          swiperDesk = false
+          itemSwiperDesk.destroy(true, true)
+        }
+        swiperMob = true
+        itemSwiperMob = new Swiper(item.querySelector(".swiper"), {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          observer: true,
+          observeParents: true,
+          loop: item.querySelectorAll(".swiper-slide").length > 2,
+          navigation: {
+            prevEl: item.querySelector(".nav-btn--prev"),
+            nextEl: item.querySelector(".nav-btn--next")
+          },
+          speed: 800
+      })
+      }
+    }
+    initSwiper()
+    window.addEventListener("resize", initSwiper)
   })
 }
 //switch active tab/block
@@ -381,6 +435,7 @@ const addExtra = document.querySelectorAll(".add-extra")
 if (addExtra) {
   addExtra.forEach(item => {
     let content = item.querySelector(".add-extra__content").outerHTML
+    item.querySelectorAll(".add-extra__content")[0].classList.add("del-hidden")
     item.querySelector(".add-extra__btn").addEventListener("click", () => {
       if (item.classList.contains("hidden")) {
         item.classList.remove("hidden")
@@ -388,6 +443,26 @@ if (addExtra) {
         item.querySelectorAll(".add-extra__content")[item.querySelectorAll(".add-extra__content").length - 1].insertAdjacentHTML("afterend", content)
       }   
     })
+    //delete file
+    item.addEventListener("click", e => {
+      item.querySelectorAll(".add-extra__del").forEach((del, idx) => {
+          if (del.contains(e.target)) {
+              setTimeout(() => {
+                  del.parentNode.remove()
+              }, 0);
+          }
+      })
+
+  })
+  })
+}
+function addExtraSuccess(form) {
+  formReset(form)
+  form.parentNode.classList.add("hidden")
+  form.querySelectorAll(".add-extra__content").forEach((item,idx) => {
+    if (idx != 0) {
+      item.remove()
+    }
   })
 }
 // tour modal
@@ -411,17 +486,17 @@ if (tourMod) {
 const purchForm = document.querySelectorAll(".purchase-mod__form")
 if (purchForm) {
   purchForm.forEach(form => {
-    form.querySelectorAll("input[name=ticket-type").forEach(item => {
+    form.querySelectorAll("input[name='ticket-type[]'").forEach(item => {
       item.addEventListener('change', () => {
         if (item.parentNode.classList.contains("all-tickets")) {
-          form.querySelectorAll("input[name=ticket-type").forEach(el => {       
+          form.querySelectorAll("input[name='ticket-type[]'").forEach(el => {       
             el.removeAttribute("checked")
             el.checked = false
           })
           item.setAttribute("checked", true)
           item.checked = true
         } else {
-          form.querySelectorAll("input[name=ticket-type").forEach(el => {       
+          form.querySelectorAll("input[name='ticket-type[]'").forEach(el => {       
             if (el.parentNode.classList.contains("all-tickets")) {
               el.removeAttribute("checked")
               el.checked = false
@@ -714,6 +789,13 @@ if (introILL) {
       }
     })
   })
+}
+//remove ticket
+function removeTicket(ticket) {
+  setTimeout(() => {
+    ticket.parentNode.parentNode.remove()
+  }, 0);
+
 }
 $('[data-fancybox]').fancybox({
   infobar: false,

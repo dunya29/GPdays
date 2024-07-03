@@ -17,6 +17,12 @@
     }
     &__bottom {
         min-height: 66px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .page-time {
+            margin-top: auto;
+        }
     }
     @media (max-width: $bp1) {
         padding: 20px;

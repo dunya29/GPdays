@@ -112,7 +112,7 @@
                         </div> -->
                     </div>
                     <div class="intro__lottie">
-                        <lottie-player src="Main_anim_solo.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                        <lottie-player src="Main_anim solo_crop.json" background="transparent" speed="1" loop autoplay></lottie-player>
                     </div>
                     <picture><source srcset="img/green-grad.webp" type="image/webp"><img class="bg-grad intro__grad" src="img/green-grad.png" alt=""></picture>
                     <div class="intro__ill">
@@ -173,7 +173,7 @@
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <!--item-prices-->
-<div class="swiper-slide item-prices">
+<div class="swiper-slide item-prices mod-open-btn" data-modal="reg-mod">
     <div class="item-prices__top">
         <h3>«Управление агентством: день 1»</h3>
         <div class="page-content">
@@ -194,7 +194,7 @@
     </div>
 </div>
                                 <!--item-prices-->
-<div class="swiper-slide item-prices">
+<div class="swiper-slide item-prices mod-open-btn" data-modal="reg-mod">
     <div class="item-prices__top">
         <h3>«Управление агентством: день 1»</h3>
         <div class="page-content">
@@ -215,7 +215,7 @@
     </div>
 </div>
                                 <!--item-prices-->
-<div class="swiper-slide item-prices">
+<div class="swiper-slide item-prices mod-open-btn" data-modal="reg-mod">
     <div class="item-prices__top">
         <h3>«Управление агентством: день 1»</h3>
         <div class="page-content">
@@ -236,7 +236,7 @@
     </div>
 </div>
                                 <!--item-prices-->
-<div class="swiper-slide item-prices">
+<div class="swiper-slide item-prices mod-open-btn" data-modal="reg-mod">
     <div class="item-prices__top">
         <h3>«Управление агентством: день 1»</h3>
         <div class="page-content">
@@ -257,7 +257,7 @@
     </div>
 </div>
                                 <!--item-prices-->
-<div class="swiper-slide item-prices">
+<div class="swiper-slide item-prices mod-open-btn" data-modal="reg-mod">
     <div class="item-prices__top">
         <h3>«Управление агентством: день 1»</h3>
         <div class="page-content">
@@ -3816,6 +3816,31 @@
                     </div>
                 </div>
             </section>
+            <!--reports zaqlushka-->
+            <section class="section reports" id="id="main-reports>
+                <div class="container">
+                    <div class="sec-grid">
+                        <h5 class="sec-lbl">секции & доклады</h5>
+                        <div class="sec-inner">
+                            <div class="reports__top">
+                                <h2 class="sec-title">программа</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reports__stub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="57" viewBox="0 0 54 57" fill="none">
+                            <path d="M25.5882 3V11.5M43.5459 10.48L37.56 16.4867M51 28.5H42.5294M43.5459 46.52L37.56 40.5133M25.5882 54V45.5M7.63059 46.52L13.6165 40.5133M3 28.5H8.64706M11.4706 14.475L13.4753 16.4867" stroke="url(#paint0_linear_546_36845)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_546_36845" x1="3" y1="28.5" x2="51" y2="28.5" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4CC326"/>
+                            <stop offset="1" stop-color="#FFEA2A"/>
+                            </linearGradient>
+                            </defs>
+                        </svg>
+                        <h3>Скоро здесь появится программа конференции</h3>
+                    </div>
+                </div>
+            </section>
             <!--parties-->
             <section class="section parties">
                 <div class="container">
@@ -4703,7 +4728,7 @@
                             <div class="item-form__error"></div>
                         </div>
                         <div class="item-form">
-                            <input type="text" placeholder="название компании*">
+                            <input type="text" placeholder="компания*">
                             <div class="item-form__error"></div>
                         </div>
                     </div>
@@ -4775,14 +4800,14 @@
                     <div class="form__fieldset">
                         <div class="form__lbl">1. выберите билет</div>
                         <div class="form__row">
-                            <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type"><p>All Inclusive</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1-2</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Профильные секции: Design & HR</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 2</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Разработка</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Afterparty</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Online-трансляция</p></label>
+                            <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type[]"><p>All Inclusive</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1-2</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Профильные секции: Design & HR</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 2</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Разработка</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Afterparty</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Online-трансляция</p></label>
                         </div>
                     </div>
                     <div class="form__footer">
@@ -4826,7 +4851,7 @@
                                 <div class="item-form__error"></div>
                             </div>
                             <div class="item-form">
-                                <input type="text" placeholder="telegram">
+                                <input type="text" placeholder="telegram*">
                                 <div class="item-form__error"></div>
                             </div>
                             <div class="item-form">
@@ -4880,20 +4905,35 @@
                             <button type="button" class="item-ticket__edit" onclick="openModal(document.querySelector('#purchase-mod-step2'))"><svg><use xlink:href="img/icons/sprite.svg#edit"></use></svg></button>
                         </div>
                     </div>
+                    <div class="mb-40 item-ticket">
+                        <div class="item-ticket__left">
+                            <h5 class="grad-txt">«Управление: день 1-2»</h5>
+                            <div class="h5">15 000 ₽</div>
+                        </div>
+                        <div class="item-ticket__right">
+                            <div class="item-ticket__info">
+                                <p>Иванов Иван Иванович</p>
+                                <p>+7 111 111-11-11</p>
+                                <p>example@gmail.ru</p>
+                                <p>Название компании</p>
+                            </div>
+                            <button type="button" class="item-ticket__del" onclick="removeTicket(this)"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+                        </div>
+                    </div>
                     <div class="mb-40 add-extra hidden">
-                        <form class="mb-40 add-extra__inner purchase-mod__form">
+                        <form class="mb-40 add-extra__inner purchase-mod__form" onsubmit="event.preventDefault();addExtraSuccess(this)">
                             <h5>Добавить еще участника</h5>
                             <div class="form__fieldset">
                                 <div class="form__lbl">1. выберите билет</div>
                                 <div class="form__row">
-                                    <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type"><p>All Inclusive</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1-2</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Профильные секции: Design & HR</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 2</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Разработка</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Afterparty</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Online-трансляция</p></label>
+                                    <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type[]"><p>All Inclusive</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1-2</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Профильные секции: Design & HR</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 2</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Разработка</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Afterparty</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Online-трансляция</p></label>
                                 </div>
                             </div>
                             <div class="form__fieldset">
@@ -4912,13 +4952,14 @@
                                         <div class="item-form__error"></div>
                                     </div>
                                     <div class="item-form">
-                                        <input type="text" placeholder="telegram">
+                                        <input type="text" placeholder="telegram*">
                                         <div class="item-form__error"></div>
                                     </div>
                                     <div class="item-form">
-                                        <input type="text" placeholder="название компании*">
+                                        <input type="text" placeholder="компания*">
                                         <div class="item-form__error"></div>
                                     </div>
+                                    <button type="button" class="btn add-extra__del"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
                                 </div>
                             </div>
                             <button type="submit" class="btn main-btn">Сохранить</button>
@@ -5054,7 +5095,7 @@
                                     <div class="item-form__error"></div>
                                 </div>
                                 <div class="item-form">
-                                    <input type="text" placeholder="название компании*">
+                                    <input type="text" placeholder="компания*">
                                     <div class="item-form__error"></div>
                                 </div>
                             </div>
@@ -5096,7 +5137,7 @@
                             <div class="form__lbl">2. краткая информация</div>
                             <div class="form__grid">
                                 <div class="item-form">
-                                    <input type="text" placeholder="название компании*">
+                                    <input type="text" placeholder="компания*">
                                     <div class="item-form__error"></div>
                                 </div>
                                 <div class="item-form">
@@ -5120,6 +5161,7 @@
                                     <input type="text" placeholder="telegram*">
                                     <div class="item-form__error"></div>
                                 </div>
+                                <button type="button" class="btn add-extra__del"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
                             </div>
                             <button type="button" class="btn stroke-btn add-extra__btn"><span class="link" data-txt="добавить еще участника">добавить еще участника</span></button>
                         </div>
@@ -5253,6 +5295,7 @@
                                 <input type="text" placeholder="telegram*">
                                 <div class="item-form__error"></div>
                             </div>
+                            <button type="button" class="btn add-extra__del"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
                         </div>
                         <button type="button" class="btn stroke-btn add-extra__btn"><span class="link" data-txt="добавить еще участника">добавить еще участника</span></button>
                     </div>
@@ -5410,7 +5453,8 @@
 <script src="js/libs/inputmask.min.js"></script>
 <script src="js/libs/swiper.min.js"></script>
 <script src="js/libs/fancybox.min.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+ <script src="js/libs/lottie-player.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

@@ -24,7 +24,7 @@
                             <div class="item-form__error"></div>
                         </div>
                         <div class="item-form">
-                            <input type="text" placeholder="название компании*">
+                            <input type="text" placeholder="компания*">
                             <div class="item-form__error"></div>
                         </div>
                     </div>
@@ -96,14 +96,14 @@
                     <div class="form__fieldset">
                         <div class="form__lbl">1. выберите билет</div>
                         <div class="form__row">
-                            <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type"><p>All Inclusive</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1-2</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Профильные секции: Design & HR</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 2</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Разработка</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Afterparty</p></label>
-                            <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Online-трансляция</p></label>
+                            <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type[]"><p>All Inclusive</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1-2</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Профильные секции: Design & HR</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 2</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Разработка</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Afterparty</p></label>
+                            <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Online-трансляция</p></label>
                         </div>
                     </div>
                     <div class="form__footer">
@@ -147,7 +147,7 @@
                                 <div class="item-form__error"></div>
                             </div>
                             <div class="item-form">
-                                <input type="text" placeholder="telegram">
+                                <input type="text" placeholder="telegram*">
                                 <div class="item-form__error"></div>
                             </div>
                             <div class="item-form">
@@ -201,20 +201,35 @@
                             <button type="button" class="item-ticket__edit" onclick="openModal(document.querySelector('#purchase-mod-step2'))"><svg><use xlink:href="img/icons/sprite.svg#edit"></use></svg></button>
                         </div>
                     </div>
+                    <div class="mb-40 item-ticket">
+                        <div class="item-ticket__left">
+                            <h5 class="grad-txt">«Управление: день 1-2»</h5>
+                            <div class="h5">15 000 ₽</div>
+                        </div>
+                        <div class="item-ticket__right">
+                            <div class="item-ticket__info">
+                                <p>Иванов Иван Иванович</p>
+                                <p>+7 111 111-11-11</p>
+                                <p>example@gmail.ru</p>
+                                <p>Название компании</p>
+                            </div>
+                            <button type="button" class="item-ticket__del" onclick="removeTicket(this)"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
+                        </div>
+                    </div>
                     <div class="mb-40 add-extra hidden">
-                        <form class="mb-40 add-extra__inner purchase-mod__form">
+                        <form class="mb-40 add-extra__inner purchase-mod__form" onsubmit="event.preventDefault();addExtraSuccess(this)">
                             <h5>Добавить еще участника</h5>
                             <div class="form__fieldset">
                                 <div class="form__lbl">1. выберите билет</div>
                                 <div class="form__row">
-                                    <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type"><p>All Inclusive</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1-2</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Профильные секции: Design & HR</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 1</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Управление: день 2</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Разработка</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Afterparty</p></label>
-                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type"><p>Online-трансляция</p></label>
+                                    <label class="text-checkbox all-tickets"><input type="checkbox" name="ticket-type[]"><p>All Inclusive</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1-2</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Профильные секции: Design & HR</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 1</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Управление: день 2</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Разработка</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Afterparty</p></label>
+                                    <label class="text-checkbox"><input type="checkbox" name="ticket-type[]"><p>Online-трансляция</p></label>
                                 </div>
                             </div>
                             <div class="form__fieldset">
@@ -233,13 +248,14 @@
                                         <div class="item-form__error"></div>
                                     </div>
                                     <div class="item-form">
-                                        <input type="text" placeholder="telegram">
+                                        <input type="text" placeholder="telegram*">
                                         <div class="item-form__error"></div>
                                     </div>
                                     <div class="item-form">
-                                        <input type="text" placeholder="название компании*">
+                                        <input type="text" placeholder="компания*">
                                         <div class="item-form__error"></div>
                                     </div>
+                                    <button type="button" class="btn add-extra__del"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
                                 </div>
                             </div>
                             <button type="submit" class="btn main-btn">Сохранить</button>
@@ -375,7 +391,7 @@
                                     <div class="item-form__error"></div>
                                 </div>
                                 <div class="item-form">
-                                    <input type="text" placeholder="название компании*">
+                                    <input type="text" placeholder="компания*">
                                     <div class="item-form__error"></div>
                                 </div>
                             </div>
@@ -417,7 +433,7 @@
                             <div class="form__lbl">2. краткая информация</div>
                             <div class="form__grid">
                                 <div class="item-form">
-                                    <input type="text" placeholder="название компании*">
+                                    <input type="text" placeholder="компания*">
                                     <div class="item-form__error"></div>
                                 </div>
                                 <div class="item-form">
@@ -441,6 +457,7 @@
                                     <input type="text" placeholder="telegram*">
                                     <div class="item-form__error"></div>
                                 </div>
+                                <button type="button" class="btn add-extra__del"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
                             </div>
                             <button type="button" class="btn stroke-btn add-extra__btn"><span class="link" data-txt="добавить еще участника">добавить еще участника</span></button>
                         </div>
@@ -574,6 +591,7 @@
                                 <input type="text" placeholder="telegram*">
                                 <div class="item-form__error"></div>
                             </div>
+                            <button type="button" class="btn add-extra__del"><svg><use xlink:href="img/icons/sprite.svg#close"></use></svg></button>
                         </div>
                         <button type="button" class="btn stroke-btn add-extra__btn"><span class="link" data-txt="добавить еще участника">добавить еще участника</span></button>
                     </div>

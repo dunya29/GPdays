@@ -44,8 +44,11 @@
     &__logo {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: center;
+        align-items: end;
         gap: 30px;
+        a:first-child {
+            margin-bottom: 2px;
+        }
     }
     &__menu {
         margin-bottom: 20px;
@@ -136,6 +139,7 @@
             align-self: center;
             grid-area: 2/2/3/3;
             grid-template-columns: 1fr;
+            align-items: center;
             gap: 12px;
             margin: 0 0 20px;
         }

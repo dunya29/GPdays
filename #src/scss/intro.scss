@@ -44,9 +44,6 @@
         width: 44%;
         z-index: 2;
         pointer-events: none;
-        img {
-            animation-play-state: running;
-        }
     }
     &__grad {
         bottom: 0;
@@ -98,13 +95,22 @@
     &__lottie {
         position: absolute;
         bottom: 0;
+        right: 10px;
+        width: 44% !important;
         z-index: 2;
+        pointer-events: none;
     }
-    @media (min-width: $bp2) and (min-height: 900px) {
+    @media (min-width: $bp1) and (min-height: 900px) {
         &__inner {
             min-height: 900px;
         }
     }
+    @media (min-width: $bp2) and (min-height: 900px) {
+        &__inner {
+            min-height: 800px;
+        }
+    }
+
     @media(min-width: 1920.98px) {
         &__inner {
             min-height: 900px;
@@ -127,6 +133,11 @@
             bottom: -120px;
             right: -20px;
             width: 50%;        
+        }
+        &__lottie {
+            bottom: 0;
+            right: -20px;
+            width: 50%!important; 
         }
         &__ill {
             img {
@@ -153,7 +164,7 @@
             }
         }
         &__ill-img{
-            transform: scale(0.85);
+            transform: scale(0.85)!important;
         }
         &__title--icon {
             top: -18%;
@@ -162,7 +173,7 @@
     }
     @media (max-width: $bp2) {
         &__inner {
-            min-height: 720px;
+            min-height: 700px;
             padding-top: 60px;
         }
         &__title {
@@ -182,11 +193,14 @@
             }
         }
         &__ill-img {
-            transform: scale(0.7);
+            transform: scale(0.7)!important;
         }
         &__img {
             width: 52%;
             bottom: -80px;
+        }
+        &__lottie {
+            width: 52%!important;
         }
         &__title {
             &--icon {
@@ -209,6 +223,9 @@
         &__img {
             width: 59%;
             bottom: -80px;
+        }
+        &__lottie {
+            width: 59%!important;
         }
         &__content {
             max-width: 54%;
@@ -237,7 +254,7 @@
             }
         }
         &__ill-img {
-            transform: scale(0.5);
+            transform: scale(0.5)!important;
         }
     }
     @media (max-width: $bp4) {
@@ -256,7 +273,7 @@
             background: $black;
         }
         &:after {
-            top: 325px;
+            top: 326px;
             height: 100px;
             background: linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, #141414 100%);
         }
@@ -273,6 +290,15 @@
             max-width: 300px;
             top: -10px;
             right: 57%;
+            bottom: auto;
+            transform: translateX(50%);
+        }
+        &__lottie {
+            order: -1;
+            width: 100%!important;
+            max-width: 300px;
+            top: 25px;
+            right: 51%;
             bottom: auto;
             transform: translateX(50%);
         }
