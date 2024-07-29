@@ -963,6 +963,11 @@ h6,
   color: #4CC326;
 }
 
+.item-form__success.error,
+.item-form__success .error {
+  color: #FF380D;
+}
+
 .form__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2251,7 +2256,7 @@ h6,
 }
 
 .partners__items {
-  margin-top: 110px;
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 150px 40px;
@@ -2259,6 +2264,11 @@ h6,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-bottom: 100px;
+}
+
+.partners__items:last-child {
+  margin-bottom: 0;
 }
 
 .partners__items a {
@@ -3669,6 +3679,30 @@ h6,
   justify-content: space-between;
 }
 
+.payment-mod .form__grid .text-radio p span span {
+  width: 45px;
+  height: 40px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.payment-mod .form__grid .text-radio.text-radio-invoicebox input + p span span {
+  background-image: url(../img/icons/pay-invoicebox.svg);
+}
+
+.payment-mod .form__grid .text-radio.text-radio-invoicebox input:checked + p span span {
+  background-image: url(../img/icons/pay-invoicebox-active.svg);
+}
+
+.payment-mod .form__grid .text-radio.text-radio-bank input + p span span {
+  background-image: url(../img/icons/pay-bank.svg);
+}
+
+.payment-mod .form__grid .text-radio.text-radio-bank input:checked + p span span {
+  background-image: url(../img/icons/pay-bank-active.svg);
+}
+
 .payment-mod__promo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4122,6 +4156,7 @@ h6,
 
   .partners__items {
     gap: 130px 30px;
+    margin-bottom: 80px;
   }
 
   .item-parties {
@@ -4529,12 +4564,9 @@ h6,
   }
 
   .partners__items {
-    margin-top: 80px;
     gap: 80px 40px;
-  }
-
-  .partners__items a img {
-    max-height: 100px;
+    margin-top: 30px;
+    margin-bottom: 60px;
   }
 
   .item-reviews {
@@ -4736,6 +4768,10 @@ h6,
   .payment-mod .form__grid .text-radio p:after,
   .payment-mod .form__grid .text-radio p:before {
     border-radius: 28px;
+  }
+
+  .payment-mod .form__grid .text-radio p span span {
+    width: 35px;
   }
 
   .reports-mod__info {
@@ -5032,7 +5068,6 @@ h6,
 
   .partners__items {
     gap: 50px 20px;
-    margin-top: 60px;
   }
 
   .partners__items a {
@@ -5042,7 +5077,6 @@ h6,
   }
 
   .partners__items a img {
-    max-height: 90px;
     -o-object-fit: contain;
     object-fit: contain;
   }
@@ -5246,7 +5280,7 @@ h6,
   }
 
   .modal__content {
-    max-width: 70%;
+    max-width: 75%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
@@ -5578,7 +5612,7 @@ h6,
   }
 
   .partners__items a img {
-    max-height: 40px;
+    max-height: 90px;
   }
 
   .parties__items {

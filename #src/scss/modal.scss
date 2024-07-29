@@ -399,7 +399,7 @@
             margin-bottom: 20px;
         }
         &__content {
-            max-width: 70%;
+            max-width: 75%;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
         }
@@ -632,9 +632,32 @@
                     border-radius: 44px;
                 }
                 span {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    span {
+                        width: 45px;
+                        height: 40px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+            &.text-radio-invoicebox {
+                input + p span span {
+                    background-image: url(../img/icons/pay-invoicebox.svg);
+                }
+                input:checked + p span span {
+                    background-image: url(../img/icons/pay-invoicebox-active.svg);
+                }
+            }
+            &.text-radio-bank {
+                input + p span span {
+                    background-image: url(../img/icons/pay-bank.svg);
+                }
+                input:checked + p span span {
+                    background-image: url(../img/icons/pay-bank-active.svg);
                 }
             }
         }
@@ -682,6 +705,11 @@
                     padding: 20px;
                     &:after, &:before {
                         border-radius: 28px;
+                    }
+                    span {
+                        span {
+                           width: 35px;
+                        }
                     }
                 }
             }

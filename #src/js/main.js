@@ -65,9 +65,14 @@ function modClickOutside() {
   if (modal) {
     modal.forEach(mod => {
       mod.addEventListener("click", e => {
-          if (!mod.querySelector(".modal__content").contains(e.target) || mod.querySelector(".btn-close").contains(e.target)){
+          if (!(mod.classList.contains("payment-mod") || mod.classList.contains("purchase-mod") || mod.classList.contains("reg-mod") || mod.classList.contains("tour-mod")|| mod.classList.contains("hackaton-mod")) && 
+          !mod.querySelector(".modal__content").contains(e.target))
+          {
               closeModal(mod)
           }
+          if (mod.querySelector(".btn-close").contains(e.target)) {
+            closeModal(mod)
+        }
       })
     })
   }

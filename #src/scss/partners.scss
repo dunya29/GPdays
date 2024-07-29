@@ -3,12 +3,16 @@
         position: relative;
     }
     &__items {
-        margin-top: 110px;
+        margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(12,1fr);
         gap: 150px 40px;
         justify-items: center;
         align-items: center;
+        margin-bottom: 100px;
+        &:last-child {
+            margin-bottom: 0;
+        }
         a {
             grid-column-end: span 3;
             display: block;
@@ -30,15 +34,17 @@
     @media (max-width: $bp1) {
         &__items {
             gap: 130px 30px;
+            margin-bottom: 80px;
         }
     }
     @media (max-width: $bp2) {
         &__items {
-            margin-top: 80px;
             gap: 80px 40px;
+            margin-top: 30px;
+            margin-bottom: 60px;
             a {
                 img {
-                    max-height: 100px;
+                    //max-height: 100px;
                 }
             }
         }
@@ -46,11 +52,10 @@
     @media (max-width: $bp3) {
         &__items {
             gap: 50px 20px;
-            margin-top: 60px;
             a {
                 transform: scale(0.8);
                 img {
-                    max-height: 90px;
+                    //max-height: 90px;
                     object-fit: contain;
                 }
             }
@@ -60,7 +65,8 @@
         &__items {
             a {
                 img {
-                    max-height: 40px;
+                    //max-height: 40px;
+                    max-height: 90px;
                 }
             }
         }
